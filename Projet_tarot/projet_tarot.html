@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--lien bootstrap css-->
+    <link href="projet_tarot.css" rel="stylesheet" type="text/css">
+    <title>Projet_Tarot</title>
+</head>
+<body class="text-secondary">
+    <div class="container text-center">
+        <section class="container">
+            <header class=" rounded"><h1 class="display-1">Rider Waite Tarot</h1></header>
+            <select class="form-select form-select-sm mb-3" aria-label="Default select example" 
+            onchange="document.getElementById('image').src = 'image_'+this.value+'.jpg'; document.getElementById('affichage').innerHTML = document.getElementById(this.value).innerHTML;">
+                <!--Pour appeler plusieurs fonction dans onchange ; à la fin de la fonction ^^-->
+                <option selected value="Rien">Choisis ta carte</option>
+                <option value="Mat">Le Mat</option>
+                <option value="Bateleur">Le Bateleur</option>
+                <option value="Papesse">La Papesse</option>
+                <option value="Impératrice">L'Impératrice</option>
+                <option value="Empereur">L'Empereur</option>
+                <option value="Pape">Le Pape</option>
+                <option value="Amoureux">Les Amoureux</option>
+                <option value="Chariot">Le Chariot</option>
+                <option value="Justice">Le Justice</option>
+                <option value="Hermite">L'Hermite</option>
+                <option value="Roue">La Roue de Fortune</option>
+                <option value="Force">La Force</option>
+                <option value="Pendu">Le Pendu</option>
+                <option value="Mort">L'arcane sans nom/Mort ?</option>
+                <option value="Tempérance">La Tempérance</option>
+                <option value="Diable">Le Diable</option>
+                <option value="Tour">La ma</option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+            
+        </section>
+
+        <section class="container-fluid">
+
+            <div class="float"><img src="image_rien.jpg" id="image" class="img-fluid"></div>
+            <div id="affichage"></div>
+
+                
+                <div id="Mat" class="none shadow">
+                    
+                    <h3 class="display-3 mb-3">le Mat</h3>
+                        <div class="justify-content"><p><span class="alinea">Un jeune homme, avec en guise de bagage son petit baluchon, se met en route pour un voyage… Le sourire aux lèvres, il regarde le Soleil.</span> Il fait beau, il a toute confiance dans le Destin qui va porter ses pas vers… l’inconnu !
+                            </p><p><span class="alinea">Un petit chien, symbole d’Amitié, l’accompagne… ou cherche à le mettre en garde.</span> Dans son exaltation, Le Mat/Fou ne se rend pas compte qu’il est si proche du vide. Va-t-il s’en apercevoir à temps ?</p>
+                        <img src="flèche.png" width="10%" class="mt-3"></div>
+                        <select class="form-select form-select-sm mb-3"
+                        onchange="document.getElementById('affichage2_1').innerHTML = document.getElementById(this.value).innerHTML;">
+                            <option selected value="rien">Thème d'interprétation</option>
+                            <option value="Bref1">En Bref</option>
+                            <option value="Interpretation1">Interprétation générale</option>
+                            <option value="Amour1">Amour</option>
+                            <option value="Travail1">Travail</option>
+                            <option value="Finances1">Finances</option>
+                            <option value="Guidance1">Guidance</option>
+                            <option value="Tout1">Tout</option>
+                        </select>
+                        <div id="affichage2_1"> 
+                            <section id="Tout1" class="none">
+                                <div id="Bref1" class="none">
+                                    <h3 class="display-3">En Bref</h3>
+                                    <p class="bolder">A l'endroit :</p>
+                                    <ul>
+                                        <li>Nouveau départ ou opportunité, voyage</li>
+                                        <li>Faire le « Fou-Fou »</li>
+                                        <li>Innocence, insouciance, liberté</li>
+                                    </ul>
+                                    <p class="bold">A l'envers :</p>
+                                    <ul>
+                                        <li>Inconscience, actes non réfléchis</li>
+                                        <li>Etre mal préparé, danger possible</li>
+                                        <li>Se comporter comme un gamin</li>
+                                    </ul>
+                                </div>
+                                <div id="Interpretation1" class="none">
+                                    <h3 class="display-3 mb-3">Interprétation générale</h3>
+                                    <p><span class="alinea">Le Fou est considéré comme étant soit la première ou la dernière Carte des Arcanes Majeurs.</span> Dans la tradition du Tarot de Marseille, la Carte est appelée Le Mat et elle n’est pas numérotée du tout. Dans la tradition « Rider-Waite », la Carte porte le numéro 0 (zéro).
+                                    Le Fou est à la fois la Carte de « départ » et d’ »arrivée » du cycle des Arcanes Majeurs. En effet, si on conçoit les Arcanes Majeurs comme un voyage initiatique de découverte de soi – avec les différentes Arcanes Majeurs comme étapes de ce voyage – on part bien de soi pour revenir… à soi, avec une meilleure compréhension de nous-même, des autres et du Monde.
+                                    Le Fou est donc un aventurier, un pionnier, qui part dans une nouvelle aventure avec enthousiasme et l’espoir que sa quête sera fructueuse. Il n’a pas pris grand chose avec lui – un petit baluchon – et il n’a pas l’air de savoir vraiment où ses pas vont le mener.
+                                    J’aime cette Carte pour l’Energie exaltante qui s’en dégage. Un nouveau départ se profile, êtes-vous prêt à faire le grand saut ? Qu’est-ce qui vous retient ? L’optimisme est de rigueur, foncer est permis ! Une certaine confiance en l’avenir irradie cette Carte. Les idées sont originales – certains peuvent jouer les rabat-joie mais nul n’est obligé de les écouter, encore moins de les croire !
+                                    Le revers de cet enthousiasme, c’est l’immaturité dont peut faire preuve Le Fou, son inclinaison à se « faire des idées », son manque de préparation et son incapacité à voir le danger. Le Fou peut se révéler être un « casse-cou », un « risque-tout » qui ne réfléchit pas avant d’agir et qui subit ensuite les conséquences de ses actes.
+                                    </p>
+                                </div>
+
+                                <div id="Amour1" class="none">
+                                    <h3 class="display-3 mb-3">Le Mat en Amour</h3>
+                                    <p><span class="alinea">Le Fou et l’Amour ou l’Amour Fou ? ? </span>L’énergie du Fou est orientée vers le plaisir, le jeu, les rencontres. S’il s’agit dans le Tirage de trouver l’Amour, le Fou conseille « d’y aller » et de se lancer pleinement dans l’ »aventure » de la découverte de l’Autre. L’idée est de garder cette légèreté qui caractérise Le Fou et de ne pas (trop) se poser de questions.  Une soirée, une sortie, une rencontre au travail : tout événement de la Vie est susceptible de provoquer une rencontre.
+                                    Si c’est la relation actuelle qui est l’objet du Tirage, alors Le Fou peut se lire comme l’inexpérience ou l’immaturité d’un des deux partenaires. Il peut aussi éclairer sur l’état de la relation. Celle-ci manque peut-être de « fun » ; les choses se sont peut-être endormies dans le couple. Il faut puiser dans l’Energie du Fou pour réveiller tout ça, surprendre l’autre et repartir.
+                                    </p>
+                                </div>
+                                    
+                                <div id="Travail1" class="none">
+                                    <h3 class="display-3 mb-3">Le Mat au Travail</h3>
+                                    <p><span class="alinea">Dans le Domaine du Travail, Le Fou est de bon augure pour un nouvel emploi, un changement professionnel ou un nouveau projet.</span> Il peut aussi présager d’un déménagement ou d’une promotion. Sa présence indique qu’il est temps de tenter quelque chose d’inhabituel, de sortir de sa zone de confort : prendre plus de responsabilités, demander un « gros » dossier à gérer ou apprendre une nouvelle compétence.
+                                    Cela pourrait paraître « fou » ou déraisonnable à l’entourage – attention à faire la part des choses entre vrai désir et caprice ; entre opportunité et prise de risque inconsidérée.                                    
+                                    </p>
+                                </div>
+
+                                <div id="Finances1" class="none">
+                                    <h3 class="display-3 mb-3">Les Finances du Mat</h3>
+                                    <p><span class="alinea">Quand on parle Argent et Finances, Le Fou amène là aussi son Energie enthousiaste et aventurière, indiquant qu’il est temps de « prendre un risque.</span> »
+                                    Prudence ! Si l’opportunité parait trop belle pour être vraie… c’est très probablement le cas.
+                                    Le Fou peut aussi indiquer que dépenser de l’argent pour vous faire plaisir à vous est le meilleur investissement possible en ce moment – parce que vous en avez besoin. Selon vos moyens, faîtes-vous ce petit plaisir qui vous fait envie.
+                                    </p>
+                                </div>
+
+                                <div id="Guidance1" class="none">
+                                    <h3 class="display-3 mb-3">La Guidance du Mat</h3>
+                                    <p><span class="alinea">Sur le chemin spirituel, Le Fou est une présence rassurante.</span> Il est comme nous, il est nous : en recherche et en construction. Lui non plus ne sait pas où ce processus de découverte de lui-même va l’emmener… D’ailleurs, s’il le savait, le parcours n’aurait plus d’intérêt.
+                                    Le chemin est long et parfois sinueux. Le Fou symbolise cette exploration de différentes approches et pratiques spirituelles avant de trouver celles qui nous conviennent. Apprendre et utiliser le Tarot fait d’ailleurs peut-être partie de cette exploration ?
+                                    Qu’avez-vous envie d’essayer ? Quelle pratique ou rituel souhaitez-vous ajouter à votre quotidien ? Qu’aimeriez-vous que cette pratique vous apporte ?
+                                    L’Energie du Fou vous invite à oser, l’essentiel est d’avoir essayé et d’avoir appris.
+                                    </p>
+                                </div>
+                                
+                                
+                    </section>
+                    
+                    </div>
+                </div>
+
+                <div id="Bateleur" style="display: none;">
+                    <h3>le Bateleur</h3>
+                    <p class="justify-content">Le Magicien – ou le Bateleur dans le Tarot de Marseille – pointe sa baguette vers le Ciel tandis que son autre main pointe la Terre. Ce geste signifie qu’il capte l’Energie de l’Univers, qu’elle le traverse, pour se manifester dans le monde, dans le quotidien. Devant lui, les attributs des quatre Suites du Tarot sont posés sur la table : un Baton, une Coupe, une Epée et un Denier. Chacun représente un Elément : le Feu, l’Eau, l’Air et la Terre. Le Magicien a donc tout à disposition pour “manifester” ses rêves et ses désirs, c’est à dire les rendre possibles, tangibles. Les possibilités sont infinies… comme le souligne le symbole au-dessus de sa tête et sa ceinture : un serpent qui se mord la queue. Le Magicien est associé à la planète Mercure, la planète des compétences, de la logique et de l’intelligence. Son chiffre est le 1, le chiffre du commencement.</p>
+                    <h5>Interprétation</h5>
+                    <p>
+                    Si Le Fou symbolise le désir de découvrir, Le Magicien est “L’Alchimiste” des Arcanes Majeurs, celui qui peut tout créer à partir de rien, transformer le plomb en or. La Carte du Magicien est donc la Carte de “manifestation” par excellence, c’est à dire de la création, rendre possible, concrétiser et avoir un impact sur son environnement et le monde. Le Magicien est une Carte qui souligne les talents uniques du Consultant… talents uniques au service de ses désirs et souhaits uniques et authentiques eux aussi.
+                    Avec le Magicien, le succès est à portée de main. Le Consultant est prêt à utiliser ses capacités et ses compétences pour accomplir ses objectifs. Le désir de faire quelque chose de nouveau, de démarrer un nouveau cycle est très fort. Le Consultant se sent vraiment optimisme, dans un état d’esprit “conquérant”. Il sait – ou saura le moment venu – utiliser toutes les ressources à sa disposition pour y arriver : ses compétences, ses proches / son réseau, les outils et ressources à disposition.
+                    Le Magicien est une Carte qui évoque également la concentration et la focalisation. Pour le Consultant, ce n’est pas le moment de s’éparpiller ou d’essayer de tout faire en même temps. Il s’agit de rester concentré sur un seul objectif ou tache et d’y mettre toute son énergie, toutes ses ressources. Le Magicien met en garde contre les distractions, voire les tentations qui pourraient faire dévier le Consultant et compromettre l’atteinte de son objectif.
+                    </p>
+                </div>
+            
+        </section>
+    </div>
+    <div><img src="séparation.png" width="100%"></image></div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!--lien bootstrap js-->
+
+</html>

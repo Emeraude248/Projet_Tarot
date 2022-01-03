@@ -1,0 +1,65 @@
+
+
+/*En-tête*/
+
+header {
+    background-image: url(bleu2.jpg);
+    height: 50%;
+    background-repeat: no-repeat;
+    color:rgb(228, 217, 124);
+    box-shadow: 2px 2px 2px 2px rgb(90, 92, 155);
+}
+
+h1 {
+    padding-bottom: 8px;
+}
+
+/*Select*/
+
+.form-select {
+    background-color:#04074e;
+    color:rgb(228, 217, 124);
+    border : rgb(62, 63, 100);
+    box-shadow: 2px 2px 2px 2px rgb(90, 92, 155);
+}
+
+.form-select:focus,
+.form-select.focus {
+    border : rgb(62, 63, 100);
+    box-shadow: 2px 2px 2px 2px rgb(90, 92, 155);
+}
+ /*comment changer la couleur du hoover des option de select, est-ce possible ?
+ flemme de chercher*/
+
+/*alinéa*/
+
+.alinea {
+    padding-left: 30px;
+}
+
+.float {
+    float: left;
+    max-width: 50%;
+    margin-right: 5px;
+}
+
+p {
+    text-align:justify ;
+}
+
+ul {
+    text-align: justify;
+}
+
+.none {
+    display: none;
+}
+
+.display-3 {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.form-select-sm {
+    margin-top: 8px;
+}
