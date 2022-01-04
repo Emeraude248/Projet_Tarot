@@ -1,194 +1,1063 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!--lien bootstrap css-->
-    <link href="projet_tarot.css" rel="stylesheet" type="text/css">
-    <title>Projet_Tarot</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!--lien bootstrap css-->
+<link href="projet_tarot.css" rel="stylesheet" type="text/css">
+<title>Projet_Tarot</title>
 </head>
 <body class="text-secondary">
-    <div class="container text-center">
-        <section class="container">
-            <header class=" rounded"><h1 class="display-1">Rider Waite Tarot</h1></header>
-            <select class="form-select form-select-sm mb-3" aria-label="Default select example" 
-            onchange="document.getElementById('image').src = 'image_'+this.value+'.jpg'; document.getElementById('affichage').innerHTML = document.getElementById(this.value).innerHTML;">
-                <!--Pour appeler plusieurs fonction dans onchange ; à la fin de la fonction ^^-->
-                <option selected value="Rien">Choisis ta carte</option>
-                <option value="Mat">Le Mat</option>
-                <option value="Bateleur">Le Bateleur</option>
-                <option value="Papesse">La Papesse</option>
-                <option value="Impératrice">L'Impératrice</option>
-                <option value="Empereur">L'Empereur</option>
-                <option value="Pape">Le Pape</option>
-                <option value="Amoureux">Les Amoureux</option>
-                <option value="Chariot">Le Chariot</option>
-                <option value="Justice">Le Justice</option>
-                <option value="Hermite">L'Hermite</option>
-                <option value="Roue">La Roue de Fortune</option>
-                <option value="Force">La Force</option>
-                <option value="Pendu">Le Pendu</option>
-                <option value="Mort">L'arcane sans nom/Mort ?</option>
-                <option value="Tempérance">La Tempérance</option>
-                <option value="Diable">Le Diable</option>
-                <option value="Tour">La ma</option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-            </select>
+<div class="container text-center">
+<section class="container">
+    <header class=" rounded"><h1 class="display-1">Rider Waite Tarot</h1></header>
+    <select class="form-select form-select-sm mb-3" aria-label="Default select example" 
+    onchange="document.getElementById('image').src = 'image_'+this.value+'.jpg'; document.getElementById('affichage').innerHTML = document.getElementById(this.value).innerHTML;">
+        <!--Pour appeler plusieurs fonction dans onchange ; à la fin de la fonction ^^-->
+        <option selected value="Rien">Choisis ta carte</option>
+        <option value="Mat">Le Mat</option>
+        <option value="Bateleur">Le Bateleur</option>
+        <option value="Papesse">La Papesse</option>
+        <option value="Impératrice">L'Impératrice</option>
+        <option value="Empereur">L'Empereur</option>
+        <option value="Pape">Le Pape</option>
+        <option value="Amoureux">Les Amoureux</option>
+        <option value="Chariot">Le Chariot</option>
+        <option value="Justice">Le Justice</option>
+        <option value="Hermite">L'Hermite</option>
+        <option value="Roue">La Roue de Fortune</option>
+        <option value="Force">La Force</option>
+        <option value="Pendu">Le Pendu</option>
+        <option value="Mort">L'arcane sans nom/Mort ?</option>
+        <option value="Tempérance">La Tempérance</option>
+        <option value="Diable">Le Diable</option>
+        <option value="Tour">La ma</option>
+        <option value=""></option>
+       
+    </select>
+    
+</section>
+
+<section class="container-fluid">
+
+    <div class="float"><img src="image_rien.jpg" id="image" class="img-fluid"></div>
+    <div id="affichage"><!--nécessaire à l'affichage, zone où les parties cachées seront affichées--></div>
+    
+        <!--Le Mat-->
+        <div id="Mat" class="none">
             
-        </section>
-
-        <section class="container-fluid">
-
-            <div class="float"><img src="image_rien.jpg" id="image" class="img-fluid"></div>
-            <div id="affichage"></div>
-
+            <h3 class="display-3 mb-3">Le Mat</h3>
+            <div class="justify-content">
+                <p><span class="alinea">Un jeune homme, avec en guise de bagage son petit baluchon, se met en route pour un voyage… Le sourire aux lèvres, il regarde le Soleil.</span> Il fait beau, il a toute confiance dans le Destin qui va porter ses pas vers… l’inconnu !
+                </p>
+                <p><span class="alinea">Un petit chien, symbole d’Amitié, l’accompagne… ou cherche à le mettre en garde.</span> Dans son exaltation, Le Mat/Fou ne se rend pas compte qu’il est si proche du vide. Va-t-il s’en apercevoir à temps ?</p>
+                <div class="mb-3"><img src="séparation.png" width="30%"></image></div>
+                <h5 class="display-5 mb-3">En Bref</h5>
+                <p><span class="h5">A l'endroit :</span> nouveau départ ou opportunité, voyage ; faire le « Fou-Fou » ; innocence, insouciance, liberté</p>
+                <p><span class="h5">A l'envers :</span> inconscience, actes non réfléchis ; être mal préparé, danger possible ; se comporter comme un gamin</p>
                 
-                <div id="Mat" class="none shadow">
-                    
-                    <h3 class="display-3 mb-3">le Mat</h3>
-                        <div class="justify-content"><p><span class="alinea">Un jeune homme, avec en guise de bagage son petit baluchon, se met en route pour un voyage… Le sourire aux lèvres, il regarde le Soleil.</span> Il fait beau, il a toute confiance dans le Destin qui va porter ses pas vers… l’inconnu !
-                            </p><p><span class="alinea">Un petit chien, symbole d’Amitié, l’accompagne… ou cherche à le mettre en garde.</span> Dans son exaltation, Le Mat/Fou ne se rend pas compte qu’il est si proche du vide. Va-t-il s’en apercevoir à temps ?</p>
-                        <img src="flèche.png" width="10%" class="mt-3"></div>
-                        <select class="form-select form-select-sm mb-3"
-                        onchange="document.getElementById('affichage2_1').innerHTML = document.getElementById(this.value).innerHTML;">
-                            <option selected value="rien">Thème d'interprétation</option>
-                            <option value="Bref1">En Bref</option>
-                            <option value="Interpretation1">Interprétation générale</option>
-                            <option value="Amour1">Amour</option>
-                            <option value="Travail1">Travail</option>
-                            <option value="Finances1">Finances</option>
-                            <option value="Guidance1">Guidance</option>
-                            <option value="Tout1">Tout</option>
-                        </select>
-                        <div id="affichage2_1"> 
-                            <section id="Tout1" class="none">
-                                <div id="Bref1" class="none">
-                                    <h3 class="display-3">En Bref</h3>
-                                    <p class="bolder">A l'endroit :</p>
-                                    <ul>
-                                        <li>Nouveau départ ou opportunité, voyage</li>
-                                        <li>Faire le « Fou-Fou »</li>
-                                        <li>Innocence, insouciance, liberté</li>
-                                    </ul>
-                                    <p class="bold">A l'envers :</p>
-                                    <ul>
-                                        <li>Inconscience, actes non réfléchis</li>
-                                        <li>Etre mal préparé, danger possible</li>
-                                        <li>Se comporter comme un gamin</li>
-                                    </ul>
-                                </div>
-                                <div id="Interpretation1" class="none">
-                                    <h3 class="display-3 mb-3">Interprétation générale</h3>
-                                    <p><span class="alinea">Le Fou est considéré comme étant soit la première ou la dernière Carte des Arcanes Majeurs.</span> Dans la tradition du Tarot de Marseille, la Carte est appelée Le Mat et elle n’est pas numérotée du tout. Dans la tradition « Rider-Waite », la Carte porte le numéro 0 (zéro).
-                                    Le Fou est à la fois la Carte de « départ » et d’ »arrivée » du cycle des Arcanes Majeurs. En effet, si on conçoit les Arcanes Majeurs comme un voyage initiatique de découverte de soi – avec les différentes Arcanes Majeurs comme étapes de ce voyage – on part bien de soi pour revenir… à soi, avec une meilleure compréhension de nous-même, des autres et du Monde.
-                                    Le Fou est donc un aventurier, un pionnier, qui part dans une nouvelle aventure avec enthousiasme et l’espoir que sa quête sera fructueuse. Il n’a pas pris grand chose avec lui – un petit baluchon – et il n’a pas l’air de savoir vraiment où ses pas vont le mener.
-                                    J’aime cette Carte pour l’Energie exaltante qui s’en dégage. Un nouveau départ se profile, êtes-vous prêt à faire le grand saut ? Qu’est-ce qui vous retient ? L’optimisme est de rigueur, foncer est permis ! Une certaine confiance en l’avenir irradie cette Carte. Les idées sont originales – certains peuvent jouer les rabat-joie mais nul n’est obligé de les écouter, encore moins de les croire !
-                                    Le revers de cet enthousiasme, c’est l’immaturité dont peut faire preuve Le Fou, son inclinaison à se « faire des idées », son manque de préparation et son incapacité à voir le danger. Le Fou peut se révéler être un « casse-cou », un « risque-tout » qui ne réfléchit pas avant d’agir et qui subit ensuite les conséquences de ses actes.
-                                    </p>
-                                </div>
+            </div>
+                
+            <select class="form-select form-select-sm mb-3"
+            onchange="document.getElementById('affichage2_1').innerHTML = document.getElementById(this.value).innerHTML;">
+                <option selected value="rien">Thème d'interprétation</option>
+                <option value="Interpretation1">Interprétation générale</option>
+                <option value="Amour1">Amour</option>
+                <option value="Travail1">Travail</option>
+                <option value="Finances1">Finances</option>
+                <option value="Guidance1">Guidance</option>
+                <option value="Tout1">Tout</option>
+</select>
 
-                                <div id="Amour1" class="none">
-                                    <h3 class="display-3 mb-3">Le Mat en Amour</h3>
-                                    <p><span class="alinea">Le Fou et l’Amour ou l’Amour Fou ? ? </span>L’énergie du Fou est orientée vers le plaisir, le jeu, les rencontres. S’il s’agit dans le Tirage de trouver l’Amour, le Fou conseille « d’y aller » et de se lancer pleinement dans l’ »aventure » de la découverte de l’Autre. L’idée est de garder cette légèreté qui caractérise Le Fou et de ne pas (trop) se poser de questions.  Une soirée, une sortie, une rencontre au travail : tout événement de la Vie est susceptible de provoquer une rencontre.
-                                    Si c’est la relation actuelle qui est l’objet du Tirage, alors Le Fou peut se lire comme l’inexpérience ou l’immaturité d’un des deux partenaires. Il peut aussi éclairer sur l’état de la relation. Celle-ci manque peut-être de « fun » ; les choses se sont peut-être endormies dans le couple. Il faut puiser dans l’Energie du Fou pour réveiller tout ça, surprendre l’autre et repartir.
+            <div id="affichage2_1"> 
+                    
+                        
+
+                        <div id="Interpretation1" class="none">
+                            <h3 class="display-3 mb-3">Interprétation générale</h3>
+                            <p><span class="alinea">Le Fou est considéré comme étant soit la première ou la dernière Carte des Arcanes Majeurs.</span> Dans la tradition du Tarot de Marseille, la Carte est appelée Le Mat et elle n’est pas numérotée du tout. Dans la tradition « Rider-Waite », la Carte porte le numéro 0 (zéro).
+                            Le Fou est à la fois la Carte de « départ » et d’ »arrivée » du cycle des Arcanes Majeurs. En effet, si on conçoit les Arcanes Majeurs comme un voyage initiatique de découverte de soi – avec les différentes Arcanes Majeurs comme étapes de ce voyage – on part bien de soi pour revenir… à soi, avec une meilleure compréhension de nous-même, des autres et du Monde.
+                            Le Fou est donc un aventurier, un pionnier, qui part dans une nouvelle aventure avec enthousiasme et l’espoir que sa quête sera fructueuse. Il n’a pas pris grand chose avec lui – un petit baluchon – et il n’a pas l’air de savoir vraiment où ses pas vont le mener.
+                            J’aime cette Carte pour l’Energie exaltante qui s’en dégage. Un nouveau départ se profile, êtes-vous prêt à faire le grand saut ? Qu’est-ce qui vous retient ? L’optimisme est de rigueur, foncer est permis ! Une certaine confiance en l’avenir irradie cette Carte. Les idées sont originales – certains peuvent jouer les rabat-joie mais nul n’est obligé de les écouter, encore moins de les croire !
+                            Le revers de cet enthousiasme, c’est l’immaturité dont peut faire preuve Le Fou, son inclinaison à se « faire des idées », son manque de préparation et son incapacité à voir le danger. Le Fou peut se révéler être un « casse-cou », un « risque-tout » qui ne réfléchit pas avant d’agir et qui subit ensuite les conséquences de ses actes.
+                            </p>
+                        </div>
+
+                        <div id="Amour1" class="none">
+                            <h3 class="display-3 mb-3">Le Mat en Amour</h3>
+                            <p><span class="alinea">Le Fou et l’Amour ou l’Amour Fou ? ? </span>L’énergie du Fou est orientée vers le plaisir, le jeu, les rencontres. S’il s’agit dans le Tirage de trouver l’Amour, le Fou conseille « d’y aller » et de se lancer pleinement dans l’ »aventure » de la découverte de l’Autre. L’idée est de garder cette légèreté qui caractérise Le Fou et de ne pas (trop) se poser de questions.  Une soirée, une sortie, une rencontre au travail : tout événement de la Vie est susceptible de provoquer une rencontre.
+                            Si c’est la relation actuelle qui est l’objet du Tirage, alors Le Fou peut se lire comme l’inexpérience ou l’immaturité d’un des deux partenaires. Il peut aussi éclairer sur l’état de la relation. Celle-ci manque peut-être de « fun » ; les choses se sont peut-être endormies dans le couple. Il faut puiser dans l’Energie du Fou pour réveiller tout ça, surprendre l’autre et repartir.
+                            </p>
+                        </div>
+                            
+                        <div id="Travail1" class="none">
+                            <h3 class="display-3 mb-3">Le Mat au Travail</h3>
+                            <p><span class="alinea">Dans le Domaine du Travail, Le Fou est de bon augure pour un nouvel emploi, un changement professionnel ou un nouveau projet.</span> Il peut aussi présager d’un déménagement ou d’une promotion. Sa présence indique qu’il est temps de tenter quelque chose d’inhabituel, de sortir de sa zone de confort : prendre plus de responsabilités, demander un « gros » dossier à gérer ou apprendre une nouvelle compétence.
+                            Cela pourrait paraître « fou » ou déraisonnable à l’entourage – attention à faire la part des choses entre vrai désir et caprice ; entre opportunité et prise de risque inconsidérée.                                    
+                            </p>
+                        </div>
+
+                        <div id="Finances1" class="none">
+                            <h3 class="display-3 mb-3">Les Finances du Mat</h3>
+                            <p><span class="alinea">Quand on parle Argent et Finances, Le Fou amène là aussi son Energie enthousiaste et aventurière, indiquant qu’il est temps de « prendre un risque.</span> »
+                            Prudence ! Si l’opportunité parait trop belle pour être vraie… c’est très probablement le cas.
+                            Le Fou peut aussi indiquer que dépenser de l’argent pour vous faire plaisir à vous est le meilleur investissement possible en ce moment – parce que vous en avez besoin. Selon vos moyens, faîtes-vous ce petit plaisir qui vous fait envie.
+                            </p>
+                        </div>
+
+                        <div id="Guidance1" class="none">
+                            <h3 class="display-3 mb-3">La Guidance du Mat</h3>
+                            <p><span class="alinea">Sur le chemin spirituel, Le Fou est une présence rassurante.</span> Il est comme nous, il est nous : en recherche et en construction. Lui non plus ne sait pas où ce processus de découverte de lui-même va l’emmener… D’ailleurs, s’il le savait, le parcours n’aurait plus d’intérêt.
+                            Le chemin est long et parfois sinueux. Le Fou symbolise cette exploration de différentes approches et pratiques spirituelles avant de trouver celles qui nous conviennent. Apprendre et utiliser le Tarot fait d’ailleurs peut-être partie de cette exploration ?
+                            Qu’avez-vous envie d’essayer ? Quelle pratique ou rituel souhaitez-vous ajouter à votre quotidien ? Qu’aimeriez-vous que cette pratique vous apporte ?
+                            L’Energie du Fou vous invite à oser, l’essentiel est d’avoir essayé et d’avoir appris.
+                            </p>
+                        </div>
+                        <section id="Tout1" class="none">
+                            
+                            <div>
+                                <h3 class="display-3 mb-3">Interprétation générale</h3>
+                                <p><span class="alinea">Le Fou est considéré comme étant soit la première ou la dernière Carte des Arcanes Majeurs.</span> Dans la tradition du Tarot de Marseille, la Carte est appelée Le Mat et elle n’est pas numérotée du tout. Dans la tradition « Rider-Waite », la Carte porte le numéro 0 (zéro).
+                                Le Fou est à la fois la Carte de « départ » et d’ »arrivée » du cycle des Arcanes Majeurs. En effet, si on conçoit les Arcanes Majeurs comme un voyage initiatique de découverte de soi – avec les différentes Arcanes Majeurs comme étapes de ce voyage – on part bien de soi pour revenir… à soi, avec une meilleure compréhension de nous-même, des autres et du Monde.
+                                Le Fou est donc un aventurier, un pionnier, qui part dans une nouvelle aventure avec enthousiasme et l’espoir que sa quête sera fructueuse. Il n’a pas pris grand chose avec lui – un petit baluchon – et il n’a pas l’air de savoir vraiment où ses pas vont le mener.
+                                J’aime cette Carte pour l’Energie exaltante qui s’en dégage. Un nouveau départ se profile, êtes-vous prêt à faire le grand saut ? Qu’est-ce qui vous retient ? L’optimisme est de rigueur, foncer est permis ! Une certaine confiance en l’avenir irradie cette Carte. Les idées sont originales – certains peuvent jouer les rabat-joie mais nul n’est obligé de les écouter, encore moins de les croire !
+                                Le revers de cet enthousiasme, c’est l’immaturité dont peut faire preuve Le Fou, son inclinaison à se « faire des idées », son manque de préparation et son incapacité à voir le danger. Le Fou peut se révéler être un « casse-cou », un « risque-tout » qui ne réfléchit pas avant d’agir et qui subit ensuite les conséquences de ses actes.
+                                </p>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">Le Mat en Amour</h3>
+                                <p><span class="alinea">Le Fou et l’Amour ou l’Amour Fou ? ? </span>L’énergie du Fou est orientée vers le plaisir, le jeu, les rencontres. S’il s’agit dans le Tirage de trouver l’Amour, le Fou conseille « d’y aller » et de se lancer pleinement dans l’ »aventure » de la découverte de l’Autre. L’idée est de garder cette légèreté qui caractérise Le Fou et de ne pas (trop) se poser de questions.  Une soirée, une sortie, une rencontre au travail : tout événement de la Vie est susceptible de provoquer une rencontre.
+                                Si c’est la relation actuelle qui est l’objet du Tirage, alors Le Fou peut se lire comme l’inexpérience ou l’immaturité d’un des deux partenaires. Il peut aussi éclairer sur l’état de la relation. Celle-ci manque peut-être de « fun » ; les choses se sont peut-être endormies dans le couple. Il faut puiser dans l’Energie du Fou pour réveiller tout ça, surprendre l’autre et repartir.
+                                </p>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">Le Mat au Travail</h3>
+                                <p><span class="alinea">Dans le Domaine du Travail, Le Fou est de bon augure pour un nouvel emploi, un changement professionnel ou un nouveau projet.</span> Il peut aussi présager d’un déménagement ou d’une promotion. Sa présence indique qu’il est temps de tenter quelque chose d’inhabituel, de sortir de sa zone de confort : prendre plus de responsabilités, demander un « gros » dossier à gérer ou apprendre une nouvelle compétence.
+                                Cela pourrait paraître « fou » ou déraisonnable à l’entourage – attention à faire la part des choses entre vrai désir et caprice ; entre opportunité et prise de risque inconsidérée.                                    
+                                </p>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">Les Finances du Mat</h3>
+                                <p><span class="alinea">Quand on parle Argent et Finances, Le Fou amène là aussi son Energie enthousiaste et aventurière, indiquant qu’il est temps de « prendre un risque.</span> »
+                                Prudence ! Si l’opportunité parait trop belle pour être vraie… c’est très probablement le cas.
+                                Le Fou peut aussi indiquer que dépenser de l’argent pour vous faire plaisir à vous est le meilleur investissement possible en ce moment – parce que vous en avez besoin. Selon vos moyens, faîtes-vous ce petit plaisir qui vous fait envie.
+                                </p>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">La Guidance du Mat</h3>
+                                <p><span class="alinea">Sur le chemin spirituel, Le Fou est une présence rassurante.</span> Il est comme nous, il est nous : en recherche et en construction. Lui non plus ne sait pas où ce processus de découverte de lui-même va l’emmener… D’ailleurs, s’il le savait, le parcours n’aurait plus d’intérêt.
+                                Le chemin est long et parfois sinueux. Le Fou symbolise cette exploration de différentes approches et pratiques spirituelles avant de trouver celles qui nous conviennent. Apprendre et utiliser le Tarot fait d’ailleurs peut-être partie de cette exploration ?
+                                Qu’avez-vous envie d’essayer ? Quelle pratique ou rituel souhaitez-vous ajouter à votre quotidien ? Qu’aimeriez-vous que cette pratique vous apporte ?
+                                L’Energie du Fou vous invite à oser, l’essentiel est d’avoir essayé et d’avoir appris.
+                                </p>
+                            </div>
+                        </section>
+            
+                </div>
+        </div>
+
+        <!--Bateleur-->
+        <div id="Bateleur" class="none">
+            <h3 class="display-3 mb-3">le Bateleur</h3>
+                <div class="justify-content"><p><span class="alinea">Le Magicien – ou le Bateleur dans le Tarot de Marseille – pointe sa baguette vers le Ciel tandis que son autre main pointe la Terre.</span> Ce geste signifie qu’il capte l’Energie de l’Univers, qu’elle le traverse, pour se manifester dans le monde, dans le quotidien. Devant lui, les attributs des quatre Suites du Tarot sont posés sur la table : un Baton, une Coupe, une Epée et un Denier. Chacun représente un Elément : le Feu, l’Eau, l’Air et la Terre. Le Magicien a donc tout à disposition pour “manifester” ses rêves et ses désirs, c’est à dire les rendre possibles, tangibles. Les possibilités sont infinies… comme le souligne le symbole au-dessus de sa tête et sa ceinture : un serpent qui se mord la queue. Le Magicien est associé à la planète Mercure, la planète des compétences, de la logique et de l’intelligence. Son chiffre est le 1, le chiffre du commencement.</p>
+                    <div class="mb-3"><img src="séparation.png" width="30%"></image></div>
+                    <h5 class="display-5 mb-3">En Bref</h5>
+                    <p><span class="h5">A l'endroit :</span> talent, compétence ; motivation, concentration ; confiance en soi</p>
+                    <p><span class="h5">A l'envers :</span> talents mal utilisés ; faire fausse-route ; procrastiner</p> 
+                </div>
+                <select class="form-select form-select-sm mb-3"
+                onchange="document.getElementById('affichage2_2').innerHTML = document.getElementById(this.value).innerHTML;">
+                    <option selected value="rien">Thème d'interprétation</option>
+                    <option value="Interpretation2">Interprétation générale</option>
+                    <option value="Amour2">Amour</option>
+                    <option value="Travail2">Travail</option>
+                    <option value="Finances2">Finances</option>
+                    <option value="Guidance2">Guidance</option>
+                    <option value="Tout2">Tout</option>
+                </select>
+                <div id="affichage2_2"> 
+                
+
+                        <div id="Interpretation2" class="none">
+                            <h3 class="display-3 mb-3">Interprétation générale</h3>
+                            <p><span class="alinea">Si Le Fou symbolise le désir de découvrir, Le Magicien est “L’Alchimiste” des Arcanes Majeurs, celui qui peut tout créer à partir de rien, transformer le plomb en or.</span>  La Carte du Magicien est donc la Carte de “manifestation” par excellence, c’est à dire de la création, rendre possible, concrétiser et avoir un impact sur son environnement et le monde. Le Magicien est une Carte qui souligne les talents uniques du Consultant… talents uniques au service de ses désirs et souhaits uniques et authentiques eux aussi. 
+                            Avec le Magicien, le succès est à portée de main. Le Consultant est prêt à utiliser ses capacités et ses compétences pour accomplir ses objectifs. Le désir de faire quelque chose de nouveau, de démarrer un nouveau cycle est très fort. Le Consultant se sent vraiment optimisme, dans un état d’esprit “conquérant”. Il sait – ou saura le moment venu – utiliser toutes les ressources à sa disposition pour y arriver : ses compétences, ses proches / son réseau, les outils et ressources à disposition.
+                            Le Magicien est une Carte qui évoque également la concentration et la focalisation. Pour le Consultant, ce n’est pas le moment de s’éparpiller ou d’essayer de tout faire en même temps. Il s’agit de rester concentré sur un seul objectif ou tache et d’y mettre toute son énergie, toutes ses ressources. Le Magicien met en garde contre les distractions, voire les tentations qui pourraient faire dévier le Consultant et compromettre l’atteinte de son objectif.
+                            </p>
+                        </div>
+
+                        <div id="Amour2" class="none">
+                            <h3 class="display-3 mb-3">Le Bateleur en Amour</h3>
+                            <p><span class="alinea">
+                                Si le Tirage concerne la relation du Consultant, Le Magicien indique que le Consultant et son partenaire sont mobilisés pour que “ça marche” entre eux.</span> Chacun utilise son expérience passée pour ne pas reproduire les mêmes erreurs. Chacun fait en sorte, de façon très pragmatique, de construire dans l’harmonie et le respect mutuel.
+                                Si le Consultant recherche l’Amour, Le Magicien questionne sur les moyens mis en oeuvre pour parvenir à trouver l’Ame Soeur. Qu’est-ce qui pourrait aider le Consultant dans sa quête ? Quels outils ? Quelles ressources ? Le Consultant pourrait par exemple mettre à jour son profil sur un site de rencontres, faire appel à son entourage et à ses amis pour lui présenter des personnes ou encore s’inscrire à un club ou une association pour faire de nouvelles rencontres. Il s’agit pour le Consultant de rester optimiste et de garder un état d’esprit “gagnant” pour attirer l’Amour dans sa vie.
+                                </p>
+                        </div>
+                            
+                        <div id="Travail2" class="none">
+                            <h3 class="display-3 mb-3">Le Bateleur au Travail</h3>
+                            <p><span class="alinea">Dans un Tirage professionnel, Le Magicien (Le Bateleur) indique que le Consultant est vraiment compétent dans son domaine, qu’il ou elle sait comment utiliser ses capacités et ses connaissances pour atteindre ses objectifs professionnels. Le Consultant doit donc utiliser ses talents naturels pour briller !</span> Ce n’est pas le moment de perdre confiance en soi, de cacher ou pire de minimiser l’étendue de ses capacités.
+Le Consultant peut également s’attendre à recevoir un retour positif de la part de son manager ou d’un employeur potentiel.
+</p>
+                        </div>
+
+                        <div id="Finances2" class="none">
+                            <h3 class="display-3 mb-3">Les Finances du Bateleur</h3>
+                            <p><span class="alinea">En ce qui concerne l’argent et les finances, la Carte du Magicien (Le Bateleur) suggère qu’une opportunité pourrait bien se présenter au Consultant pour augmenter ses revenus.</span>Une idée germe dans son esprit, une porte s’ouvre ou une proposition est faite. Il s’agit alors pour le Consultant d’appliquer ses talents et son authenticité pour concrétiser cette opportunité et attirer l’Abondance.
+                            </p>
+                        </div>
+
+                        <div id="Guidance2" class="none">
+                            <h3 class="display-3 mb-3">La Guidance du Bateleur</h3>
+                            <p><span class="alinea">Comment pratiquer concrètement, au quotidien, ses connaissances et croyances spirituelles ? </span>
+                                Le Bateleur indique que ces réponses sont déjà en vous… ou devant vous – comme les attribut des Suites du Tarot sur la table du Magicien – et que l’Intuition vous guide. Le Magicien est très “pratico-pratique” et vous conseille de tester, de pratiquer pour trouver ce qui vous procure le plus de bien-être et d’ancrage. Les pratiques intuitives créent le lien entre le corps, le coeur, l’Ame et l’esprit… il suffit d’essayer et de pratiquer</p>
+                        </div>
+                        <section id="Tout2" class="none">
+                           
+                            <div>
+                                <h3 class="display-3 mb-3">Interprétation générale</h3>
+                                <p><span class="alinea">Si Le Fou symbolise le désir de découvrir, Le Magicien est “L’Alchimiste” des Arcanes Majeurs, celui qui peut tout créer à partir de rien, transformer le plomb en or.</span>  La Carte du Magicien est donc la Carte de “manifestation” par excellence, c’est à dire de la création, rendre possible, concrétiser et avoir un impact sur son environnement et le monde. Le Magicien est une Carte qui souligne les talents uniques du Consultant… talents uniques au service de ses désirs et souhaits uniques et authentiques eux aussi. 
+                                Avec le Magicien, le succès est à portée de main. Le Consultant est prêt à utiliser ses capacités et ses compétences pour accomplir ses objectifs. Le désir de faire quelque chose de nouveau, de démarrer un nouveau cycle est très fort. Le Consultant se sent vraiment optimisme, dans un état d’esprit “conquérant”. Il sait – ou saura le moment venu – utiliser toutes les ressources à sa disposition pour y arriver : ses compétences, ses proches / son réseau, les outils et ressources à disposition.
+                                Le Magicien est une Carte qui évoque également la concentration et la focalisation. Pour le Consultant, ce n’est pas le moment de s’éparpiller ou d’essayer de tout faire en même temps. Il s’agit de rester concentré sur un seul objectif ou tache et d’y mettre toute son énergie, toutes ses ressources. Le Magicien met en garde contre les distractions, voire les tentations qui pourraient faire dévier le Consultant et compromettre l’atteinte de son objectif.
+                                </p>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">Le Bateleur en Amour</h3>
+                                <p><span class="alinea">
+                                    Si le Tirage concerne la relation du Consultant, Le Magicien indique que le Consultant et son partenaire sont mobilisés pour que “ça marche” entre eux.</span> Chacun utilise son expérience passée pour ne pas reproduire les mêmes erreurs. Chacun fait en sorte, de façon très pragmatique, de construire dans l’harmonie et le respect mutuel.
+                                    Si le Consultant recherche l’Amour, Le Magicien questionne sur les moyens mis en oeuvre pour parvenir à trouver l’Ame Soeur. Qu’est-ce qui pourrait aider le Consultant dans sa quête ? Quels outils ? Quelles ressources ? Le Consultant pourrait par exemple mettre à jour son profil sur un site de rencontres, faire appel à son entourage et à ses amis pour lui présenter des personnes ou encore s’inscrire à un club ou une association pour faire de nouvelles rencontres. Il s’agit pour le Consultant de rester optimiste et de garder un état d’esprit “gagnant” pour attirer l’Amour dans sa vie.
                                     </p>
-                                </div>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">Le Bateleur au Travail</h3>
+                                <p><span class="alinea">Dans un Tirage professionnel, Le Magicien (Le Bateleur) indique que le Consultant est vraiment compétent dans son domaine, qu’il ou elle sait comment utiliser ses capacités et ses connaissances pour atteindre ses objectifs professionnels. Le Consultant doit donc utiliser ses talents naturels pour briller !</span> Ce n’est pas le moment de perdre confiance en soi, de cacher ou pire de minimiser l’étendue de ses capacités.
+Le Consultant peut également s’attendre à recevoir un retour positif de la part de son manager ou d’un employeur potentiel.
+</p>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">Les Finances du Bateleur</h3>
+                                <p><span class="alinea">En ce qui concerne l’argent et les finances, la Carte du Magicien (Le Bateleur) suggère qu’une opportunité pourrait bien se présenter au Consultant pour augmenter ses revenus.</span>Une idée germe dans son esprit, une porte s’ouvre ou une proposition est faite. Il s’agit alors pour le Consultant d’appliquer ses talents et son authenticité pour concrétiser cette opportunité et attirer l’Abondance.
+                                </p>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">La Guidance du Bateleur</h3>
+                                <p><span class="alinea">Comment pratiquer concrètement, au quotidien, ses connaissances et croyances spirituelles ? </span>
+                                    Le Bateleur indique que ces réponses sont déjà en vous… ou devant vous – comme les attribut des Suites du Tarot sur la table du Magicien – et que l’Intuition vous guide. Le Magicien est très “pratico-pratique” et vous conseille de tester, de pratiquer pour trouver ce qui vous procure le plus de bien-être et d’ancrage. Les pratiques intuitives créent le lien entre le corps, le coeur, l’Ame et l’esprit… il suffit d’essayer et de pratiquer</p>
+                            </div>
+                        
+            </section>
+            
+            </div>
+        </div>
+    
+        <!--Papesse-->
+        <div id="Papesse" class="none">
+            
+            <h3 class="display-3 mb-3">la Papesse</h3>
+                <div class="justify-content"><p><span class="alinea">La Papesse ou la Grande Prêtresse est une belle femme assise sur 
+                    un trône entre deux piliers de pierre qui représentent le Jour et la Nuit, la Lumière et l’Obscurité. 
+                    Elle tient dans les mains un manuscrit qui symbolise la connaissance et la sagesse que nous venons chercher dans
+                    le Tarot.</span>Elle tient la Lune et ses mystères à distance avec son pied.
+                    Féminine, réceptive, centrée sur ses ressentis et son monde intérieur, l’Energie de la Grande Prêtresse ou Papesse 
+                    est celle du mystère, de l’intuition et des secrets révélés. La Grande Prêtresse forme un couple naturel avec le 
+                    Magicien, principe masculin, actif et ouvert, qui la précède dans les Arcanes Majeurs.</p>
+
+                    <div class="mb-3"><img src="séparation.png" width="30%"></image></div>
+                    <h5 class="display-5 mb-3">En Bref</h5>
+                    <p><span class="h5">A l'endroit :</span> intuition ; inconscient ; mystères et secrets </p>
+                    <p><span class="h5">A l'envers :</span> intuition et sagesse intérieures bloquées ; garder ses secrets ; perdre son être authentique</p>
+           </div>
+                <select class="form-select form-select-sm mb-3"
+                onchange="document.getElementById('affichage2_3').innerHTML = document.getElementById(this.value).innerHTML;">
+                    <option selected value="rien">Thème d'interprétation</option>
+                    <option value="Interpretation3">Interprétation générale</option>
+                    <option value="Amour3">Amour</option>
+                    <option value="Travail3">Travail</option>
+                    <option value="Finances3">Finances</option>
+                    <option value="Guidance3">Guidance</option>
+                    <option value="Tout3">Tout</option>
+                </select>
+                <div id="affichage2_3"> 
+                    
+
+                        <div id="Interpretation3" class="none">
+                            <h3 class="display-3 mb-3">Interprétation générale</h3>
+                            <p><span class="alinea">La Grande Prêtresse ou Papesse représente le lien avec l’Inconscient et ses informations qui nous
+                                parviennent à travers les rêves et les symboles. </span> Quand elle apparaît dans un Tirage, il est important de faire 
+                                attention à ces signes et d’écouter votre Intuition. Les problèmes actuels ou difficultés à venir ne seront pas résolues
+                                par la logique ou la réflexion… il est temps pour le Consultant d’écouter sa sagesse intime.
+                                La Grande Prêtresse ou Papesse peut aussi symboliser l’inconnu. La vie du Consultant change. 
+                                Tout ce qui lui procure stabilité et sécurité n’est plus acquis. Si certains mystères ou secrets sont dorénavant révélés, 
+                                tout n’est pas encore connu. Ces changements sont une opportunité pour le Consultant de se connecter un peu plus à son Etre
+                                authentique et de vivre de façon plus alignée avec ses objectifs de vie.  </p>
+                        </div>
+
+                        <div id="Amour3" class="none">
+                            <h3 class="display-3 mb-3">L'Amour</h3>
+                            <p><span class="alinea">En Amour, la Grande Prêtresse représente une relation intense, profonde et durable entre deux êtres qui se 
+                                comprennent et se complètent parfaitement.</span> La relation est guidée par l’Intuition, les deux partenaires ressentent une 
+                                connexion intuitive très forte l’un à l’autre. Si le Consultant est en couple et traverse des difficultés, la Papesse lui conseille 
+                                d’écouter sa sagesse intime. Si le Consultant ne se sent pas bien dans ce couple, il est temps d’en parler avec son partenaire,
+                                de comprendre d’où vient le malaise
+                            </p>
+                        </div>
+                            
+                        <div id="Travail3" class="none">
+                            <h3 class="display-3 mb-3">Le Travail</h3>
+                            <p><span class="alinea">Dans un Tirage concernant le travail, les choses ne sont peut être pas exactement comme le Consultant les 
+                                perçoit. </span> La Grande Prêtresse indique que certaines informations sont cachées ; le Consultant ne connait pas tous les 
+                                tenants et les aboutissants. Il est d’ailleurs possible que ce “secret” perdure encore un certain temps. Toutefois, il est très
+                                probable que le Consultant sache déjà quoi faire, comment se comporter ou comment réagir… et ce de façon totalement intuitive. 
+                                Il est temps d’écouter sa petite voix et de se laisser guider.</p>
+
+                        </div>
+
+                        <div id="Finances3" class="none">
+                            <h3 class="display-3 mb-3">Les Finances</h3>
+                            <p><span class="alinea">Quand on parle Argent et Finances, La Papesse indique au Consultant que certaines informations ne sont pas 
+                                en sa possession, que des choses restent cachées ou mal comprises.</span> Ce n’est donc pas le moment de prendre des décisions
+                                    radicales sans être certain d’avoir toutes les informations à disposition et d’avoir bien compris les conséquences de telles 
+                                    dépenses ou de tel investissement. Le Consultant doit faire attention à ceux à qui il accorde sa confiance.
+                            </p>
+                        </div>
+
+                        <div id="Guidance3" class="none">
+                            <h3 class="display-3 mb-3">La Guidance</h3>
+                            <p><span class="alinea">Quel rapport entretenez-vous avec votre Intuition ?</span>Etes-vous en capacité de l’écouter ? Faites-vous 
+                                confiance à votre voix intérieure ? Votre cheminement spirituel est guidé par l’Intuition. La connexion au Divin se fait plus 
+                                par le coeur que par la tête. Elle échappe au raisonnement logique et ne s’apprend pas dans les livres. Faites confiance à votre
+                                    boussole intérieure car elle guide vos choix vers plus d’alignement avec vos valeurs, vos vrais désirs et votre Etre authentique.
+                                </p>
+                        </div>
+                        <section id="Tout3" class="none">
+                           
+                            <div>
+                                <h3 class="display-3 mb-3">Interprétation générale</h3>
+                                <p><span class="alinea">La Grande Prêtresse ou Papesse représente le lien avec l’Inconscient et ses informations qui nous
+                                    parviennent à travers les rêves et les symboles. </span> Quand elle apparaît dans un Tirage, il est important de faire 
+                                    attention à ces signes et d’écouter votre Intuition. Les problèmes actuels ou difficultés à venir ne seront pas résolues
+                                    par la logique ou la réflexion… il est temps pour le Consultant d’écouter sa sagesse intime.
+                                    La Grande Prêtresse ou Papesse peut aussi symboliser l’inconnu. La vie du Consultant change. 
+                                    Tout ce qui lui procure stabilité et sécurité n’est plus acquis. Si certains mystères ou secrets sont dorénavant révélés, 
+                                    tout n’est pas encore connu. Ces changements sont une opportunité pour le Consultant de se connecter un peu plus à son Etre
+                                    authentique et de vivre de façon plus alignée avec ses objectifs de vie.  </p>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">L'Amour</h3>
+                                <p><span class="alinea">En Amour, la Grande Prêtresse représente une relation intense, profonde et durable entre deux êtres qui se 
+                                    comprennent et se complètent parfaitement.</span> La relation est guidée par l’Intuition, les deux partenaires ressentent une 
+                                    connexion intuitive très forte l’un à l’autre. Si le Consultant est en couple et traverse des difficultés, la Papesse lui conseille 
+                                    d’écouter sa sagesse intime. Si le Consultant ne se sent pas bien dans ce couple, il est temps d’en parler avec son partenaire,
+                                    de comprendre d’où vient le malaise
+                                </p>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">Le Travail</h3>
+                                <p><span class="alinea">Dans un Tirage concernant le travail, les choses ne sont peut être pas exactement comme le Consultant les 
+                                    perçoit. </span> La Grande Prêtresse indique que certaines informations sont cachées ; le Consultant ne connait pas tous les 
+                                    tenants et les aboutissants. Il est d’ailleurs possible que ce “secret” perdure encore un certain temps. Toutefois, il est très
+                                    probable que le Consultant sache déjà quoi faire, comment se comporter ou comment réagir… et ce de façon totalement intuitive. 
+                                    Il est temps d’écouter sa petite voix et de se laisser guider.</p>
+
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">Les Finances</h3>
+                                <p><span class="alinea">Quand on parle Argent et Finances, La Papesse indique au Consultant que certaines informations ne sont pas 
+                                    en sa possession, que des choses restent cachées ou mal comprises.</span> Ce n’est donc pas le moment de prendre des décisions
+                                        radicales sans être certain d’avoir toutes les informations à disposition et d’avoir bien compris les conséquences de telles 
+                                        dépenses ou de tel investissement. Le Consultant doit faire attention à ceux à qui il accorde sa confiance.
+                                </p>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">La Guidance</h3>
+                                <p><span class="alinea">Quel rapport entretenez-vous avec votre Intuition ?</span>Etes-vous en capacité de l’écouter ? Faites-vous 
+                                    confiance à votre voix intérieure ? Votre cheminement spirituel est guidé par l’Intuition. La connexion au Divin se fait plus 
+                                    par le coeur que par la tête. Elle échappe au raisonnement logique et ne s’apprend pas dans les livres. Faites confiance à votre
+                                        boussole intérieure car elle guide vos choix vers plus d’alignement avec vos valeurs, vos vrais désirs et votre Etre authentique.
+                                    </p>
+                            </div>                  
+                        
+                        </section>
+            
+            </div>
+        </div>
+
+        <!--Impératrice-->
+        <div id="Impératrice" class="none">
+            
+            <h3 class="display-3 mb-3">L'Impératrice</h3>
+                <div class="justify-content"><p><span class="alinea">L’Impératrice est le Principe Féminin, le Yin, la Mère. Belle femme
+                        assise confortablement sur un fauteuil portant le symbole de Venus, elle est enceinte.</span>Sa robe est ornée de grenades,
+                        symboles de fertilité. La Nature est luxuriante autour d’elle. Elle est connectée aux richesses visibles du Monde – forêts,
+                        blé, rivière – et à ses richesses invisibles comme la magie et les Fées.
+                        L’Impératrice est profondément associée à Gaïa et à la Vie. Elle tire de la Nature calme, douceur et sérénité.                             
+                        L’Impératrice est associée à la Carte masculine, puissante et paternelle de L’Empereur.</p>
+
+                        <div class="mb-3"><img src="séparation.png" width="30%"></image></div>
+                        <h5 class="display-5 mb-3">En Bref</h5>
+                        <p><span class="h5">A l'endroit :</span> féminité, beauté ; fertilité, abondance ; nature, Gaïa </p>
+                        <p><span class="h5">A l'envers :</span> création bloquée ; jalousie, co-dépendance ; perte</p>                        </div>
+                <select class="form-select form-select-sm mb-3"
+                onchange="document.getElementById('affichage2_4').innerHTML = document.getElementById(this.value).innerHTML;">
+                    <option selected value="rien">Thème d'interprétation</option>
+                   
+                    <option value="Interpretation4">Interprétation générale</option>
+                    <option value="Amour4">Amour</option>
+                    <option value="Travail4">Travail</option>
+                    <option value="Finances4">Finances</option>
+                    <option value="Guidance4">Guidance</option>
+                    <option value="Tout4">Tout</option>
+                </select>
+
+                <div id="affichage2_4"> 
+                    
+                           
+                       
+
+                        <div id="Interpretation4" class="none">
+                            <h3 class="display-3 mb-3">Interprétation générale</h3>
+                            <p><span class="alinea">L’Impératrice est la figure maternelle du Tarot. Elle symbolise le Féminin, le Féminin Sacré : la beauté,
+                                    la sensualité, la fertilité, la créativité et l’amour maternel. </span>Quand elle apparaît dans un Tirage, l’Impératrice rappelle
+                                    au Consultant de vivre dans cette Energie féminine et dans ses valeurs : créer de la beauté, éprouver et donner de l’Amour.
+                                    L’Impératrice peut aussi annoncer une grossesse ou une naissance… réelle ou métaphorique (nouveau projet, nouvelle idée). 
+                                    Le Consultant est alors incité à poursuivre sur la voie de la création et de l’imagination pour voir fleurir son projet.
+                                    L’Impératrice invite également le Consultant à passer du temps dans la Nature, à se reconnecter au Divin, à plus grand que soi.
+                                    Elle invite à l’ancrage.
+                                    L’Impératrice encourage également le Consultant à se connecter aux autres et notamment aux personnes à qui il ou elle souhaite 
+                                    apporter de l’amour. L’Impératrice invite à créer un espace de dialogue et de respect avec ses enfants, ses proches ou son partenaire de vie. </p>
+                        </div>
+
+                        <div id="Amour4" class="none">
+                            <h3 class="display-3 mb-3">L'Amour</h3>
+                            <p><span class="alinea">L’Impératrice est une Carte très positive dans les Tirages concernant l’Amour. Si le Consultant recherche une 
+                                connexion durable et profonde, un mariage, fonder une famille, c’est “la” Carte qu’il faut tirer. </span> Elle indique que le lien
+                                    entre les deux partenaires se renforce, qu’ils se sentent de plus en plus à l’aise l’un avec l’autre. La relation progresse vers 
+                                    plus de maturité et de sentiments profonds.
+
+                                L’Impératrice est aussi une Carte sensuelle. Elle peut indiquer que (re)trouver sensualité et jeux amoureux est important.
+                                
+                                Si le Consultant traverse des difficultés dans son couple, l’Impératrice conseille de renouer le dialogue. Respect et honnêteté sont
+                                    nécessaires, de même que beaucoup d’empathie, pour bien comprendre ce que chacun vit. Il est temps de s’ouvrir l’un à l’autre, 
+                                    d’exprimer ce qui ne va pas et de faire son maximum pour comprendre la position de l’autre.
+                            </p>
+                        </div>
+                            
+                        <div id="Travail4" class="none">
+                            <h3 class="display-3 mb-3">Le Travail</h3>
+                            <p><span class="alinea">Dans un Tirage concernant le travail, l’Impératrice est une Carte qui annonce réussite et abondance. </span> 
+                                Attention : il ne s’agit pas de rêver son succès, il faut le mettre en oeuvre ! A l’image du jardin dans lequel l’Impératrice est
+                                    assise, le Consultant doit semer, arroser, arracher les mauvaises herbes et recommencer. L’abondance sera à la hauteur de la motivation 
+                                    et du travail fourni par le Consultant.
+
+                                Si le projet professionnel du Consultant est lié au domaine artistique, créatif ; si le Consultant souhaite lancer sa propre activité, 
+                                l’Impératrice est de meilleure augure encore !
+                                
+                                L’Impératrice peut également symboliser un manager, une personne d’autorité ou un tuteur qui se montre “maternant” avec le Consultant,
+                                le conseille et le guide. Le Consultant peut s’appuyer sur cette personne et bénéficier de son aide.</p>
+
+                        </div>
+
+                        <div id="Finances4" class="none">
+                            <h3 class="display-3 mb-3">Les Finances</h3>
+                            <p><span class="alinea"> Dans le domaine de l’Argent et des Finances, l’Impératrice est une Carte d’Abondance.</span>
+                                    Elle peut annoncer un retour “dans le positif” pour le Consultant… à condition que celui-ci fasse les efforts nécessaires.
+
+                                L’Impératrice conseille de prendre les mesures nécessaires au retour de l’Abondance. Elle conseille d’être astucieux et 
+                                créatif, de prendre les bonnes initiatives.
+                            </p>
+                        </div>
+
+                        <div id="Guidance4" class="none">
+                            <h3 class="display-3 mb-3">La Guidance</h3>
+                            <p><span class="alinea">Rien de tel que de se connecter à la Nature pour ressentir équilibre et ancrage. La Nature regorge de trésors 
+                                que vous avez envie de collecter, de secrets que vous avez envie de connaître.</span>Les Pierres, les Plantes et les Animaux vous 
+                                appellent et vous parlent.
+
+                                Vivez plus intensément cette connexion, passez plus de temps – si cela est possible – dans la Nature.
+                                
+                                L’Impératrice vous rappelle aussi que les plaisirs des sens sont aussi essentiels à la Vie et qu’ils peuvent tout à fait être associés 
+                                au cheminement spirituel. </p>
+                        </div>
+                        <section id="Tout4" class="none">
+                            
+                            <div>
+                                <h3 class="display-3 mb-3">Interprétation générale</h3>
+                                <p><span class="alinea">L’Impératrice est la figure maternelle du Tarot. Elle symbolise le Féminin, le Féminin Sacré : la beauté,
+                                        la sensualité, la fertilité, la créativité et l’amour maternel. </span>Quand elle apparaît dans un Tirage, l’Impératrice rappelle
+                                        au Consultant de vivre dans cette Energie féminine et dans ses valeurs : créer de la beauté, éprouver et donner de l’Amour.
+                                        L’Impératrice peut aussi annoncer une grossesse ou une naissance… réelle ou métaphorique (nouveau projet, nouvelle idée). 
+                                        Le Consultant est alors incité à poursuivre sur la voie de la création et de l’imagination pour voir fleurir son projet.
+                                        L’Impératrice invite également le Consultant à passer du temps dans la Nature, à se reconnecter au Divin, à plus grand que soi.
+                                        Elle invite à l’ancrage.
+                                        L’Impératrice encourage également le Consultant à se connecter aux autres et notamment aux personnes à qui il ou elle souhaite 
+                                        apporter de l’amour. L’Impératrice invite à créer un espace de dialogue et de respect avec ses enfants, ses proches ou son partenaire de vie. </p>
+                            </div>
+                        <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">L'Amour</h3>
+                                <p><span class="alinea">L’Impératrice est une Carte très positive dans les Tirages concernant l’Amour. Si le Consultant recherche une 
+                                    connexion durable et profonde, un mariage, fonder une famille, c’est “la” Carte qu’il faut tirer. </span> Elle indique que le lien
+                                        entre les deux partenaires se renforce, qu’ils se sentent de plus en plus à l’aise l’un avec l’autre. La relation progresse vers 
+                                        plus de maturité et de sentiments profonds.
+
+                                    L’Impératrice est aussi une Carte sensuelle. Elle peut indiquer que (re)trouver sensualité et jeux amoureux est important.
                                     
-                                <div id="Travail1" class="none">
-                                    <h3 class="display-3 mb-3">Le Mat au Travail</h3>
-                                    <p><span class="alinea">Dans le Domaine du Travail, Le Fou est de bon augure pour un nouvel emploi, un changement professionnel ou un nouveau projet.</span> Il peut aussi présager d’un déménagement ou d’une promotion. Sa présence indique qu’il est temps de tenter quelque chose d’inhabituel, de sortir de sa zone de confort : prendre plus de responsabilités, demander un « gros » dossier à gérer ou apprendre une nouvelle compétence.
-                                    Cela pourrait paraître « fou » ou déraisonnable à l’entourage – attention à faire la part des choses entre vrai désir et caprice ; entre opportunité et prise de risque inconsidérée.                                    
-                                    </p>
-                                </div>
+                                    Si le Consultant traverse des difficultés dans son couple, l’Impératrice conseille de renouer le dialogue. Respect et honnêteté sont
+                                        nécessaires, de même que beaucoup d’empathie, pour bien comprendre ce que chacun vit. Il est temps de s’ouvrir l’un à l’autre, 
+                                        d’exprimer ce qui ne va pas et de faire son maximum pour comprendre la position de l’autre.
+                                </p>
+                            </div>
+                        <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">Le Travail</h3>
+                                <p><span class="alinea">Dans un Tirage concernant le travail, l’Impératrice est une Carte qui annonce réussite et abondance. </span> 
+                                    Attention : il ne s’agit pas de rêver son succès, il faut le mettre en oeuvre ! A l’image du jardin dans lequel l’Impératrice est
+                                        assise, le Consultant doit semer, arroser, arracher les mauvaises herbes et recommencer. L’abondance sera à la hauteur de la motivation 
+                                        et du travail fourni par le Consultant.
 
-                                <div id="Finances1" class="none">
-                                    <h3 class="display-3 mb-3">Les Finances du Mat</h3>
-                                    <p><span class="alinea">Quand on parle Argent et Finances, Le Fou amène là aussi son Energie enthousiaste et aventurière, indiquant qu’il est temps de « prendre un risque.</span> »
-                                    Prudence ! Si l’opportunité parait trop belle pour être vraie… c’est très probablement le cas.
-                                    Le Fou peut aussi indiquer que dépenser de l’argent pour vous faire plaisir à vous est le meilleur investissement possible en ce moment – parce que vous en avez besoin. Selon vos moyens, faîtes-vous ce petit plaisir qui vous fait envie.
-                                    </p>
-                                </div>
+                                    Si le projet professionnel du Consultant est lié au domaine artistique, créatif ; si le Consultant souhaite lancer sa propre activité, 
+                                    l’Impératrice est de meilleure augure encore !
+                                    
+                                    L’Impératrice peut également symboliser un manager, une personne d’autorité ou un tuteur qui se montre “maternant” avec le Consultant,
+                                    le conseille et le guide. Le Consultant peut s’appuyer sur cette personne et bénéficier de son aide.</p>
 
-                                <div id="Guidance1" class="none">
-                                    <h3 class="display-3 mb-3">La Guidance du Mat</h3>
-                                    <p><span class="alinea">Sur le chemin spirituel, Le Fou est une présence rassurante.</span> Il est comme nous, il est nous : en recherche et en construction. Lui non plus ne sait pas où ce processus de découverte de lui-même va l’emmener… D’ailleurs, s’il le savait, le parcours n’aurait plus d’intérêt.
-                                    Le chemin est long et parfois sinueux. Le Fou symbolise cette exploration de différentes approches et pratiques spirituelles avant de trouver celles qui nous conviennent. Apprendre et utiliser le Tarot fait d’ailleurs peut-être partie de cette exploration ?
-                                    Qu’avez-vous envie d’essayer ? Quelle pratique ou rituel souhaitez-vous ajouter à votre quotidien ? Qu’aimeriez-vous que cette pratique vous apporte ?
-                                    L’Energie du Fou vous invite à oser, l’essentiel est d’avoir essayé et d’avoir appris.
-                                    </p>
-                                </div>
-                                
-                                
-                    </section>
-                    
+                            </div>
+                        <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">Les Finances</h3>
+                                <p><span class="alinea"> Dans le domaine de l’Argent et des Finances, l’Impératrice est une Carte d’Abondance.</span>
+                                        Elle peut annoncer un retour “dans le positif” pour le Consultant… à condition que celui-ci fasse les efforts nécessaires.
+
+                                    L’Impératrice conseille de prendre les mesures nécessaires au retour de l’Abondance. Elle conseille d’être astucieux et 
+                                    créatif, de prendre les bonnes initiatives.
+                                </p>
+                            </div>
+                        <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">La Guidance</h3>
+                                <p><span class="alinea">Rien de tel que de se connecter à la Nature pour ressentir équilibre et ancrage. La Nature regorge de trésors 
+                                    que vous avez envie de collecter, de secrets que vous avez envie de connaître.</span>Les Pierres, les Plantes et les Animaux vous 
+                                    appellent et vous parlent.
+
+                                    Vivez plus intensément cette connexion, passez plus de temps – si cela est possible – dans la Nature.
+                                    
+                                    L’Impératrice vous rappelle aussi que les plaisirs des sens sont aussi essentiels à la Vie et qu’ils peuvent tout à fait être associés 
+                                    au cheminement spirituel. </p>
+                            </div>
+                        
+                        </section>
+            
+            </div>
+        </div>
+
+            <!--Empereur-->
+            <div id="Empereur" class="none">
+                
+
+            <h3 class="display-3 mb-3">L'Empereur</h3>
+                <div class="justify-content"><p><span class="alinea">L’Empereur est le Principe Masculin, le Yang, le Patriarche. </span>Il symbolise
+                        le pouvoir et l’autorité et son attitude froide et fermée contraste avec la sensualité de son pendant féminin L’Impératrice. 
+                        Sa longue barbe évoque ses années de pouvoir et sa sagesse. Solidement ancré sur le trône, L’Empereur règne et domine.
+
+                    Il est entouré de tous les attributs du pouvoir et de la force : son sceptre, dont la forme rappelle le symbole de la vie chez 
+                    les Egyptiens ; un globe qui symbolise le monde sur lequel il règne ; les têtes de Bélier, signe astrologique de l’action et des
+                        initiatives.</p>
+
+                        <div class="mb-3"><img src="séparation.png" width="30%"></image></div>
+                        <h5 class="display-5 mb-3">En Bref</h5>
+                        <p><span class="h5">A l'endroit :</span> autorité, pouvoir ; figure paternelle, limites ; structure, racines </p>
+                        <p><span class="h5">A l'envers :</span> domination, contrôle, abus de pouvoir ; inflexiilité, rigidité ; faiblesse, problème d'égo</p>
                     </div>
+                <select class="form-select form-select-sm mb-3"
+                onchange="document.getElementById('affichage2_5').innerHTML = document.getElementById(this.value).innerHTML;">
+                    <option selected value="rien">Thème d'interprétation</option>
+                    <option value="Interpretation5">Interprétation générale</option>
+                    <option value="Amour5">Amour</option>
+                    <option value="Travail5">Travail</option>
+                    <option value="Finances5">Finances</option>
+                    <option value="Guidance5">Guidance</option>
+                    <option value="Tout5">Tout</option>
+                </select>
+
+                <div id="affichage2_5"> 
+                    
+
+                        <div id="Interpretation5" class="none">
+                            <h3 class="display-3 mb-3">Interprétation générale</h3>
+                            <p><span class="alinea">L’Empereur est la figure paternelle du Tarot. </span> Il assure la sécurité et le bien-être de sa famille. 
+                                Patriarche, il guide avec sagesse et transmet aux plus jeunes ses connaissances et son expérience.
+
+                                L’Empereur représente aussi la stabilité, les règles, les lois… qu’il respecte d’ailleurs à la lettre.
+                                
+                                Organisé, méthodique, l’Empereur est une énergie orientée vers le succès, l’atteinte de ses objectifs.
+                                
+                                Dans un Tirage, la Carte de l’Empereur peut évoquer un jeu de pouvoir dans la vie du Consultant, ses difficultés à se conformer à 
+                                l’autorité, qu’elle soit parentale ou hiérarchique.
+                                Un changement de statut vers une position “de pouvoir” est peut-être à l’oeuvre.
+                                L’Empereur est un bon indicateur dans un Tirage amoureux car il peut présager une union, un mariage. </p>
+                        </div>
+
+                        <div id="Amour5" class="none">
+                            <h3 class="display-3 mb-3">L'Amour</h3>
+                            <p><span class="alinea">Si le Consultant recherche l’Amour, c’est donc un signe positif. </span> Une personne capable de s’engager dans 
+                                une relation solide et respectueuse pourrait bientôt faire irruption dans sa vie. Il suffira alors de construire les fondations solides
+                                    de toute relation d’amour : la confiance, le respect et l’engagement.
+
+                                Si le Consultant traverse des difficultés dans son couple, l’Empereur indique que l’un ou l’autre des partenaires se montre étouffant
+                                    ou (trop) autoritaire dans la relation. Rééquilibrer les forces est nécessaire pour retrouver entente et respect mutuel.
+                            </p>
+                        </div>
+                            
+                        <div id="Travail5" class="none">
+                            <h3 class="display-3 mb-3">Le Travail</h3>
+                            <p><span class="alinea">Dans un Tirage concernant le travail, l’Empereur symbolise souvent un manager, une personne d’autorité ou un tuteur 
+                                qui a le pouvoir de décision. </span> 
+                                Si le Consultant est apprécié de cette personne, alors, c’est un signe très positif pour sa carrière.
+                                Plus généralement, l’Empereur symbolise le succès au travail. Le Consultant pourrait se voir proposer une promotion, un nouveau projet 
+                                d’envergure ou le poste désiré. Son talent et ses compétences sont reconnues ; le Consultant a moins tendance à s’effacer au travail et
+                                    ses idées ont plus d’impact qu’auparavant. Cela dit, il a fallu et il faut encore travailler dur. L’Empereur invite à se montrer très 
+                                    organisé, à bien planifier son travail et ses actions avec une approche logique et rationnelle.</p>
+                        </div>
+
+                        <div id="Finances5" class="none">
+                            <h3 class="display-3 mb-3">Les Finances</h3>
+                            <p><span class="alinea"> Quand on parle Argent et Finances, L’Empereur est une Carte qui appelle à l’efficacité. </span>
+                                . Le Consultant sait ce qu’il ou elle a à faire pour sortir son budget de la zone rouge. Mais encore faut-il réellement s’y mettre et le
+                                    faire !
+                                L’Energie méthodique et pratique de l’Empereur invite le Consultant à créer simplement un budget et de s’y tenir coûte que coûte : prendre 
+                                note de toutes les entrées et sorties d’argent, dépenser le moins possible et rembourser les emprunts.
+                                
+                                Il n’y a rien de créatif ici mais la démarche est efficace. L’Empereur ne propose pas de solution rapide pour gagner de l’argent… mais
+                                    plutôt d’être responsable avec l’argent que le Consultant gagne et possède déjà.
+                            </p>
+                        </div>
+
+                        <div id="Guidance5" class="none">
+                            <h3 class="display-3 mb-3">La Guidance</h3>
+                            <p><span class="alinea">Les aspects pratico-pratiques et quotidiens de la vie (le travail, la santé, l’argent…) ont parfois raison de votre connection 
+                                spirituelle au Divin et à l’Univers.</span>Pourtant, vous avez en vous une Spiritualité vibrante et intense, et ce depuis longtemps ! Vous avez une 
+                                base solide et surtout une envie de grandir encore spirituellement. Ne laissez pas le quotidien prendre toute votre attention et votre temps. 
+                                N’oubliez pas votre Etre authentique et ses désirs profonds.
+
+                                Alors, jusqu’où avez-vous envie d’aller ? Quelles pratiques spirituelles vous servent le plus au quotidien et quelles sont celles que vous
+                                    aimeriez mettre en place ?</p>
+                        </div>
+                        
+                        <section id="Tout5" class="none">
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">Interprétation générale</h3>
+                                <p><span class="alinea">L’Empereur est la figure paternelle du Tarot. </span> Il assure la sécurité et le bien-être de sa famille. 
+                                    Patriarche, il guide avec sagesse et transmet aux plus jeunes ses connaissances et son expérience.
+
+                                    L’Empereur représente aussi la stabilité, les règles, les lois… qu’il respecte d’ailleurs à la lettre.
+                                    
+                                    Organisé, méthodique, l’Empereur est une énergie orientée vers le succès, l’atteinte de ses objectifs.
+                                    
+                                    Dans un Tirage, la Carte de l’Empereur peut évoquer un jeu de pouvoir dans la vie du Consultant, ses difficultés à se conformer à 
+                                    l’autorité, qu’elle soit parentale ou hiérarchique.
+                                    Un changement de statut vers une position “de pouvoir” est peut-être à l’oeuvre.
+                                    L’Empereur est un bon indicateur dans un Tirage amoureux car il peut présager une union, un mariage. </p>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">L'Amour</h3>
+                                <p><span class="alinea">Si le Consultant recherche l’Amour, c’est donc un signe positif. </span> Une personne capable de s’engager dans 
+                                    une relation solide et respectueuse pourrait bientôt faire irruption dans sa vie. Il suffira alors de construire les fondations solides
+                                        de toute relation d’amour : la confiance, le respect et l’engagement.
+
+                                    Si le Consultant traverse des difficultés dans son couple, l’Empereur indique que l’un ou l’autre des partenaires se montre étouffant
+                                        ou (trop) autoritaire dans la relation. Rééquilibrer les forces est nécessaire pour retrouver entente et respect mutuel.
+                                </p>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">Le Travail</h3>
+                                <p><span class="alinea">Dans un Tirage concernant le travail, l’Empereur symbolise souvent un manager, une personne d’autorité ou un tuteur 
+                                    qui a le pouvoir de décision. </span> 
+                                    Si le Consultant est apprécié de cette personne, alors, c’est un signe très positif pour sa carrière.
+                                    Plus généralement, l’Empereur symbolise le succès au travail. Le Consultant pourrait se voir proposer une promotion, un nouveau projet 
+                                    d’envergure ou le poste désiré. Son talent et ses compétences sont reconnues ; le Consultant a moins tendance à s’effacer au travail et
+                                        ses idées ont plus d’impact qu’auparavant. Cela dit, il a fallu et il faut encore travailler dur. L’Empereur invite à se montrer très 
+                                        organisé, à bien planifier son travail et ses actions avec une approche logique et rationnelle.</p>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">Les Finances</h3>
+                                <p><span class="alinea"> Quand on parle Argent et Finances, L’Empereur est une Carte qui appelle à l’efficacité. </span>
+                                    . Le Consultant sait ce qu’il ou elle a à faire pour sortir son budget de la zone rouge. Mais encore faut-il réellement s’y mettre et le
+                                        faire !
+                                    L’Energie méthodique et pratique de l’Empereur invite le Consultant à créer simplement un budget et de s’y tenir coûte que coûte : prendre 
+                                    note de toutes les entrées et sorties d’argent, dépenser le moins possible et rembourser les emprunts.
+                                    
+                                    Il n’y a rien de créatif ici mais la démarche est efficace. L’Empereur ne propose pas de solution rapide pour gagner de l’argent… mais
+                                        plutôt d’être responsable avec l’argent que le Consultant gagne et possède déjà.
+                                </p>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">La Guidance</h3>
+                                <p><span class="alinea">Les aspects pratico-pratiques et quotidiens de la vie (le travail, la santé, l’argent…) ont parfois raison de votre connection 
+                                    spirituelle au Divin et à l’Univers.</span>Pourtant, vous avez en vous une Spiritualité vibrante et intense, et ce depuis longtemps ! Vous avez une 
+                                    base solide et surtout une envie de grandir encore spirituellement. Ne laissez pas le quotidien prendre toute votre attention et votre temps. 
+                                    N’oubliez pas votre Etre authentique et ses désirs profonds.
+
+                                    Alors, jusqu’où avez-vous envie d’aller ? Quelles pratiques spirituelles vous servent le plus au quotidien et quelles sont celles que vous
+                                        aimeriez mettre en place ?</p>
+                            </div>
+                        
+                        </section>
+            
+            </div>
+        </div>
+
+            <!--Pape-->
+            <div id="Pape" class="none">
+            
+            <h3 class="display-3 mb-3">Le Pape</h3>
+                <div class="justify-content"><p><span class="alinea">Un personnage charismatique est assis entre deux colonnes.</span>Sa posture 
+                    rappelle celle de La Grande Prêtresse – La Papesse – à la différence qu’ici Le Hiérophant – Le Pape dans le Tarot de Marseille
+                     – n’est pas seul.
+
+                    Il lève la main en signe de bénédiction devant deux moines. De son autre main, il tient un sceptre, symbole de son autorité 
+                    spirituelle.
+                    
+                    Il est le médiateur de la parole Divine et l’enseigne à sa congrégation.</p>
+
+                        <div><img src="séparation.png" width="30%" class="mb-3"></image></div>
+                        <h5 class="display-5 mb-3">En Bref</h5>
+                        <p><span class="h5">A l'endroit :</span> autorité, pouvoir ; figure paternelle, limites ; structure, racines </p>
+                        <p><span class="h5">A l'envers :</span> domination, contrôle, abus de pouvoir ; inflexiilité, rigidité ; faiblesse, problème d'égo</p>
+                    </div>
+                <select class="form-select form-select-sm mb-3"
+                onchange="document.getElementById('affichage2_5').innerHTML = document.getElementById(this.value).innerHTML;">
+                    <option selected value="rien">Thème d'interprétation</option>
+                    <option value="Interpretation5">Interprétation générale</option>
+                    <option value="Amour5">Amour</option>
+                    <option value="Travail5">Travail</option>
+                    <option value="Finances5">Finances</option>
+                    <option value="Guidance5">Guidance</option>
+                    <option value="Tout5">Tout</option>
+                </select>
+
+                <div id="affichage2_5"> 
+                    
+                        <div id="Interpretation5" class="none">
+                            <h3 class="display-3 mb-3">Interprétation générale</h3>
+                            <p><span class="alinea">Le Hiérophant est le garant des règles qui régissent la société des hommes.</span> C’est une Carte qui évoque 
+                                les traditions, les conventions, les habitudes… et pourquoi il est bon et sage de les respecter. C’est donc une Carte un peu… 
+                                « rigide ». Elle évoque le fait de se conformer aux normes de la société… ce qui parfois est juste et nécessaire et qui – dans 
+                                d’autres circonstances – n’est pas du tout ce que le coeur a envie de faire !
+
+                                Le Hiérophant / Le Pape est aussi un enseignant, car c’est un médiateur entre deux mondes. Son Energie est celle d’un professeur, 
+                                d’un mentor, d’un coach… Il est porteur d’un message ou d’une leçon de vie quant au rôle du Consultant dans la société.
+                                
+                                Enfin, de façon très littérale, le Hiérophant / Le Pape peut indiquer une cérémonie religieuse ou une fête traditionnelle, rituelle
+                                 (PACS, mariage, baptême, communion, enterrement…)</p>
+                        </div>
+
+                        <div id="Amour5" class="none">
+                            <h3 class="display-3 mb-3">L'Amour</h3>
+                            <p><span class="alinea">Si le Consultant recherche une relation traditionnelle, dans laquelle les rôles des deux partenaires sont très 
+                                « normés », alors la présence de cette Carte est un signe positif.</span> Par contre, si la relation ne répond pas aux « normes » de 
+                                la société – qu’elles que soient ces normes d’ailleurs – le pression sociale est ressentie fortement par le Consultant et/ou le 
+                                partenaire. Cela pourrait venir contrarier sérieusement les projets amoureux.
+
+                                Il arrive que Le Hiérophant / Le Pape annonce un mariage ou un baptême.
+                            </p>
+                        </div>
+                            
+                        <div id="Travail5" class="none">
+                            <h3 class="display-3 mb-3">Le Travail</h3>
+                            <p><span class="alinea">Le Hiérophant (Le Pape) peut traduire chez le Consultant le besoin de « trouver sa place » dans un groupe, dans la société,
+                                ce qui est donc particulièrement adapté au contexte professionnel. </span> 
+                                L’avis des autres membres du groupe est alors prépondérant pour le Consultant qui cherche à être « validé » par ses pairs.
+
+Le Hiérophant invite le Consultant à identifier ce qui attendu de lui dans son contexte professionnel, sans pour autant qu’il/elle abandonne ses idées, ses valeurs ou son éthique.
+ Le Hiérophant conseille plutôt de travailler « à l’intérieur du système » et non pas « contre » lui.
+
+Si le Consultant envisage de faire un bilan de compétences ou une formation, c’est le moment ! Le Consultant est particulièrement réceptif à l’échange et à l’acquisition de nouvelles
+ compétences.</p>
+                        </div>
+
+                        <div id="Finances5" class="none">
+                            <h3 class="display-3 mb-3">Les Finances</h3>
+                            <p><span class="alinea">Quand on parle Argent et Finances, Le Hiérophant est un conservateur.  </span>
+                                Il est sage de dépenser moins que ce que l’on gagne, mettre de côté régulièrement pour avoir une épargne
+                                 en cas de besoin et de suivre les conseils avisés d’un professionnel quand cela est nécessaire.
+
+                                Le Hiérophant (Le Pape) met également en garde contre la pression sociale. Effectuer des achats
+                                 inconsidérés pour être à la mode ou faire comme les autres n’est pas un comportement avisé, si les
+                                  finances ne le permettent pas.
+                                
+                                En ce sens, le Hiérophant est un vrai « rabat-joie » mais… c’est pour notre bien !</p>
+                        </div>
+
+                        <div id="Guidance5" class="none">
+                            <h3 class="display-3 mb-3">La Guidance</h3>
+                            <p><span class="alinea">Sur le chemin spirituel, Le Hiérophant (Le Pape) est un Guide qui ouvre tous les possibles. C’est le moment d’explorer différentes 
+                                traditions et différents courants spirituels, de lire ce livre qui prend la poussière depuis quelques temps.</span>Le Hierophant 
+                                / Le Pape est une Carte très spirituelle.  Elle vous invite à contempler des questions profondes : quelles sont vos croyances ? 
+                                Quelle place a la spiritualité dans votre vie ? Quelles sont vos valeurs ?
+
+                                Dans votre quête spirituelle, qui est mon Guide ? Qu’est-ce qui aujourd’hui vous connecte le plus à l’Univers ou au Divin ?</p>
+                        </div>
+                        <section id="Tout5" class="none">
+                            <div>
+                                <h3 class="display-3 mb-3">Interprétation générale</h3>
+                                <p><span class="alinea">Le Hiérophant est le garant des règles qui régissent la société des hommes.</span> C’est une Carte qui évoque 
+                                    les traditions, les conventions, les habitudes… et pourquoi il est bon et sage de les respecter. C’est donc une Carte un peu… 
+                                    « rigide ». Elle évoque le fait de se conformer aux normes de la société… ce qui parfois est juste et nécessaire et qui – dans 
+                                    d’autres circonstances – n’est pas du tout ce que le coeur a envie de faire !
+    
+                                    Le Hiérophant / Le Pape est aussi un enseignant, car c’est un médiateur entre deux mondes. Son Energie est celle d’un professeur, 
+                                    d’un mentor, d’un coach… Il est porteur d’un message ou d’une leçon de vie quant au rôle du Consultant dans la société.
+                                    
+                                    Enfin, de façon très littérale, le Hiérophant / Le Pape peut indiquer une cérémonie religieuse ou une fête traditionnelle, rituelle
+                                     (PACS, mariage, baptême, communion, enterrement…)</p>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">L'Amour</h3>
+                                <p><span class="alinea">Si le Consultant recherche une relation traditionnelle, dans laquelle les rôles des deux partenaires sont très 
+                                    « normés », alors la présence de cette Carte est un signe positif.</span> Par contre, si la relation ne répond pas aux « normes » de 
+                                    la société – qu’elles que soient ces normes d’ailleurs – le pression sociale est ressentie fortement par le Consultant et/ou le 
+                                    partenaire. Cela pourrait venir contrarier sérieusement les projets amoureux.
+    
+                                    Il arrive que Le Hiérophant / Le Pape annonce un mariage ou un baptême.
+                                </p>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">Le Travail</h3>
+                                <p><span class="alinea">Le Hiérophant (Le Pape) peut traduire chez le Consultant le besoin de « trouver sa place » dans un groupe, dans la société,
+                                    ce qui est donc particulièrement adapté au contexte professionnel. </span> 
+                                    L’avis des autres membres du groupe est alors prépondérant pour le Consultant qui cherche à être « validé » par ses pairs.
+    
+    Le Hiérophant invite le Consultant à identifier ce qui attendu de lui dans son contexte professionnel, sans pour autant qu’il/elle abandonne ses idées, ses valeurs ou son éthique.
+     Le Hiérophant conseille plutôt de travailler « à l’intérieur du système » et non pas « contre » lui.
+    
+    Si le Consultant envisage de faire un bilan de compétences ou une formation, c’est le moment ! Le Consultant est particulièrement réceptif à l’échange et à l’acquisition de nouvelles
+     compétences.</p>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">Les Finances</h3>
+                                <p><span class="alinea">Quand on parle Argent et Finances, Le Hiérophant est un conservateur.  </span>
+                                    Il est sage de dépenser moins que ce que l’on gagne, mettre de côté régulièrement pour avoir une épargne
+                                     en cas de besoin et de suivre les conseils avisés d’un professionnel quand cela est nécessaire.
+    
+                                    Le Hiérophant (Le Pape) met également en garde contre la pression sociale. Effectuer des achats
+                                     inconsidérés pour être à la mode ou faire comme les autres n’est pas un comportement avisé, si les
+                                      finances ne le permettent pas.
+                                    
+                                    En ce sens, le Hiérophant est un vrai « rabat-joie » mais… c’est pour notre bien !</p>
+                            </div>
+                            <div><img src="séparation.png" width="50%"></image></div>
+                            <div>
+                                <h3 class="display-3 mb-3">La Guidance</h3>
+                                <p><span class="alinea">Sur le chemin spirituel, Le Hiérophant (Le Pape) est un Guide qui ouvre tous les possibles. C’est le moment d’explorer différentes 
+                                    traditions et différents courants spirituels, de lire ce livre qui prend la poussière depuis quelques temps.</span>Le Hierophant 
+                                    / Le Pape est une Carte très spirituelle.  Elle vous invite à contempler des questions profondes : quelles sont vos croyances ? 
+                                    Quelle place a la spiritualité dans votre vie ? Quelles sont vos valeurs ?
+    
+                                    Dans votre quête spirituelle, qui est mon Guide ? Qu’est-ce qui aujourd’hui vous connecte le plus à l’Univers ou au Divin ?</p>
+                            </div>
+                        <div><img src="séparation.png" width="50%"></image></div>
+                       
+                        </section>
+            
+            </div>
+        </div>
+
+ <!--Amoureux-->
+ <div id="Amoureux" class="none">
+            
+    <h3 class="display-3 mb-3">Les Amoureux</h3>
+        <div class="justify-content"><p><span class="alinea">La Carte des Amoureux représente un homme et une femme, nus. Au-dessus d’eux : 
+            le Soleil resplendissant et l’Archange Raphaël les protègent.</span>Ils sont dans un jardin luxuriant qui évoque l’aisance et le 
+            bonheur. Ils se regardent l’un et l’autre, se rapprochent et communiquent.
+
+            Le pommier et le serpent derrière la jeune femme évoquent le jardin d’Eden et l’histoire d’Adam et Eve, de la tentation et de la 
+            séparation de l’Homme et du Divin. Derrière l’homme, un arbre aux 12 flammes, comme les signes du Zodiaque, symbolise l’Eternité.</p>
+
+                <div><img src="séparation.png" width="30%" class="mb-3"></image></div>
+                <h5 class="display-5 mb-3">En Bref</h5>
+                <p><span class="h5">A l'endroit :</span> amour, relation amoureuse ; entente, union ; dualité, choix </p>
+                <p><span class="h5">A l'envers :</span> incompatibilité, dispute ; rupture ; manque de compréhension mutuelle</p>
+            </div>
+        <select class="form-select form-select-sm mb-3"
+        onchange="document.getElementById('affichage2_6').innerHTML = document.getElementById(this.value).innerHTML;">
+            <option selected value="rien">Thème d'interprétation</option>
+            <option value="Interpretation6">Interprétation générale</option>
+            <option value="Amour6">Amour</option>
+            <option value="Travail6">Travail</option>
+            <option value="Finances6">Finances</option>
+            <option value="Guidance6">Guidance</option>
+            <option value="Tout6">Tout</option>
+        </select>
+
+        <div id="affichage2_6"> 
+            
+                <div id="Interpretation6" class="none">
+                    <h3 class="display-3 mb-3">Interprétation générale</h3>
+                    <p><span class="alinea">Les Amoureux ou l’Amoureux représentent l’harmonie et les sentiments réciproques.</span> Les deux personnages
+                         ont une grande confiance l’un envers l’autre. Ils se connaissent très bien, partagent les mêmes valeurs. Ils font face ensemble
+                          aux difficultés de la vie et se soutiennent mutuellement.
+
+                        La Carte des Amoureux ne parle pas que d’amour. Les Amoureux sont la Carte des alliances fortes, de l’équilibre entre le corps et 
+                        l’esprit, entre le principe féminin et le principe masculin. Cette harmonie, cette réciprocité peut se manifester dans tous les
+                         domaines de la vie : amitié, travail, entreprenariat ou toute situation dans laquelle deux forces vives s’allient pour poursuivre
+                          – et atteindre ! – le même objectif. Pour le Consultant, il peut s’agir de trouver sa place, de trouver un emploi ou encore
+                           d’être en paix avec soi-même.
+                        
+                        Les Amoureux symbolisent aussi la notion de choix. Il est possible que le Consultant soit confronté(e) à une décision difficile 
+                        à prendre. Ce choix aura des impacts très importants dans la vie du Consultant, il est donc essentiel que la meilleure décision 
+                        soit prise. Le chemin qui paraît le plus facile aujourd’hui n’est pas forcément celui qui sera le plus positif à long terme. 
+                        Les autres Cartes du Tirage doivent aider le Consultant à se projeter dans ces différents scenarios et imaginer la marche à suivre.</p>
                 </div>
 
-                <div id="Bateleur" style="display: none;">
-                    <h3>le Bateleur</h3>
-                    <p class="justify-content">Le Magicien – ou le Bateleur dans le Tarot de Marseille – pointe sa baguette vers le Ciel tandis que son autre main pointe la Terre. Ce geste signifie qu’il capte l’Energie de l’Univers, qu’elle le traverse, pour se manifester dans le monde, dans le quotidien. Devant lui, les attributs des quatre Suites du Tarot sont posés sur la table : un Baton, une Coupe, une Epée et un Denier. Chacun représente un Elément : le Feu, l’Eau, l’Air et la Terre. Le Magicien a donc tout à disposition pour “manifester” ses rêves et ses désirs, c’est à dire les rendre possibles, tangibles. Les possibilités sont infinies… comme le souligne le symbole au-dessus de sa tête et sa ceinture : un serpent qui se mord la queue. Le Magicien est associé à la planète Mercure, la planète des compétences, de la logique et de l’intelligence. Son chiffre est le 1, le chiffre du commencement.</p>
-                    <h5>Interprétation</h5>
-                    <p>
-                    Si Le Fou symbolise le désir de découvrir, Le Magicien est “L’Alchimiste” des Arcanes Majeurs, celui qui peut tout créer à partir de rien, transformer le plomb en or. La Carte du Magicien est donc la Carte de “manifestation” par excellence, c’est à dire de la création, rendre possible, concrétiser et avoir un impact sur son environnement et le monde. Le Magicien est une Carte qui souligne les talents uniques du Consultant… talents uniques au service de ses désirs et souhaits uniques et authentiques eux aussi.
-                    Avec le Magicien, le succès est à portée de main. Le Consultant est prêt à utiliser ses capacités et ses compétences pour accomplir ses objectifs. Le désir de faire quelque chose de nouveau, de démarrer un nouveau cycle est très fort. Le Consultant se sent vraiment optimisme, dans un état d’esprit “conquérant”. Il sait – ou saura le moment venu – utiliser toutes les ressources à sa disposition pour y arriver : ses compétences, ses proches / son réseau, les outils et ressources à disposition.
-                    Le Magicien est une Carte qui évoque également la concentration et la focalisation. Pour le Consultant, ce n’est pas le moment de s’éparpiller ou d’essayer de tout faire en même temps. Il s’agit de rester concentré sur un seul objectif ou tache et d’y mettre toute son énergie, toutes ses ressources. Le Magicien met en garde contre les distractions, voire les tentations qui pourraient faire dévier le Consultant et compromettre l’atteinte de son objectif.
+                <div id="Amour6" class="none">
+                    <h3 class="display-3 mb-3">L'Amour</h3>
+                    <p><span class="alinea">La Carte des Amoureux est “la” Carte de l’Amour dans le Tarot.</span> Elle indique une relation sereine, profonde et 
+                        durable entre deux êtres qui s’aiment, se comprennent et se soutiennent. Il peut s’agir d’un amour à venir pour le Consultant ou d’une
+                         relation existante qui se développe et s’intensifie.
+
+                        Si le Consultant traverse des difficultés dans son couple, les Amoureux l’invitent à réfléchir à ce qu’il ou elle recherche dans son
+                        partenaire de vie, à ce qui est le plus essentiel à ses yeux. Il est important de le savoir pour communiquer à l’autre ses attentes 
+                        et ses désirs.
+                        
+                        Il arrive que la Carte annonce un choix en matière de relation amoureuse. Le plus souvent, il s’agit pour le Consultant de choisir 
+                        entre son partenaire de vie et une deuxième personne dont il ou elle est tombé(e) amoureux-euse.
                     </p>
                 </div>
-            
-        </section>
+                    
+                <div id="Travail6" class="none">
+                    <h3 class="display-3 mb-3">Le Travail</h3>
+                    <p><span class="alinea">Dans un Tirage concernant le travail, L’Amoureux indique que le Consultant a un choix important à faire et qu’il
+                        se sent tiraillé par les différentes possibilités. </span> 
+                        Quelle carrière choisir ? Faut-il quitter son emploi ? Lancer son activité ? Si “ne rien faire” ou “ne rien décider” semble être l’option 
+                        la plus confortable, le Consultant risque d’être de moins en moins satisfait de sa situation au fur et à mesure que le temps passe.
+
+Les Amoureux invitent le Consultant à peser le pour et le contre, à rechercher ce qui est le plus important à ses yeux – par exemple avoir un emploi moins bien 
+payé mais plus en ligne avec ses valeurs – et à prendre la décision qui sur le long terme lui apportera le plus de satisfaction.
+
+Il peut arriver que L’Amoureux évoque la bonne entente entre deux collègues, une alliance, sans forcément aller jusqu’à une relation amoureuse dans le cadre 
+professionnel.
+</p>
+                </div>
+
+                <div id="Finances6" class="none">
+                    <h3 class="display-3 mb-3">Les Finances</h3>
+                    <p><span class="alinea"> Les Amoureux indiquent que deux forces s’allient pour le plus grand bien des finances du Consultant. </span>
+                        Il peut s’agir de s’allier à un conseiller en patrimoine ou un notaire, pour bénéficier de leurs conseils avisés. Il peut s’agir 
+                        de mettre en commun des biens ou de faire un investissement avec un partenaire.
+
+                        Même s’il faut se montrer patient, le résultat devrait être positif voire surprenant.
+                    </p>
+                </div>
+
+                <div id="Guidance6" class="none">
+                    <h3 class="display-3 mb-3">La Guidance</h3>
+                    <p><span class="alinea">Les Amoureux sont une Carte d’harmonie et d’amour. </span>Vous sentez-vous en harmonie avec vous même ? Etes-vous
+                         aligné(e) avec vos valeurs et votre Etre authentique ? Le fracas de la vie, les tracas du quotidien vous éloignent parfois de votre
+                          chemin spirituel, vous déséquilibrent et vous fatiguent.
+
+                        Si vous avez tiré la Carte des Amoureux, c’est le moment de vous demander ce que vous pouvez faire pour vous, pour restaurer ancrage
+                         et bien-être dans votre vie. De quoi avez-vous envie ? Qu’est-ce qui vous ferait le plus de bien ? Méditation, sophrologie, travail
+                          énergétique… toutes les voies sont bonnes si elles vous appellent ! Choisissez avec votre coeur.</p>
+                </div>
+                <section id="Tout6" class="none">
+                       
+                <div>
+                    <h3 class="display-3 mb-3">Interprétation générale</h3>
+                    <p><span class="alinea">Les Amoureux ou l’Amoureux représentent l’harmonie et les sentiments réciproques.</span> Les deux personnages
+                         ont une grande confiance l’un envers l’autre. Ils se connaissent très bien, partagent les mêmes valeurs. Ils font face ensemble
+                          aux difficultés de la vie et se soutiennent mutuellement.
+
+                        La Carte des Amoureux ne parle pas que d’amour. Les Amoureux sont la Carte des alliances fortes, de l’équilibre entre le corps et 
+                        l’esprit, entre le principe féminin et le principe masculin. Cette harmonie, cette réciprocité peut se manifester dans tous les
+                         domaines de la vie : amitié, travail, entreprenariat ou toute situation dans laquelle deux forces vives s’allient pour poursuivre
+                          – et atteindre ! – le même objectif. Pour le Consultant, il peut s’agir de trouver sa place, de trouver un emploi ou encore
+                           d’être en paix avec soi-même.
+                        
+                        Les Amoureux symbolisent aussi la notion de choix. Il est possible que le Consultant soit confronté(e) à une décision difficile 
+                        à prendre. Ce choix aura des impacts très importants dans la vie du Consultant, il est donc essentiel que la meilleure décision 
+                        soit prise. Le chemin qui paraît le plus facile aujourd’hui n’est pas forcément celui qui sera le plus positif à long terme. 
+                        Les autres Cartes du Tirage doivent aider le Consultant à se projeter dans ces différents scenarios et imaginer la marche à suivre.</p>
+                </div>
+                    <div><img src="séparation.png" width="50%"></image></div> 
+                <div>
+                    <h3 class="display-3 mb-3">L'Amour</h3>
+                    <p><span class="alinea">La Carte des Amoureux est “la” Carte de l’Amour dans le Tarot.</span> Elle indique une relation sereine, profonde et 
+                        durable entre deux êtres qui s’aiment, se comprennent et se soutiennent. Il peut s’agir d’un amour à venir pour le Consultant ou d’une
+                         relation existante qui se développe et s’intensifie.
+
+                        Si le Consultant traverse des difficultés dans son couple, les Amoureux l’invitent à réfléchir à ce qu’il ou elle recherche dans son
+                        partenaire de vie, à ce qui est le plus essentiel à ses yeux. Il est important de le savoir pour communiquer à l’autre ses attentes 
+                        et ses désirs.
+                        
+                        Il arrive que la Carte annonce un choix en matière de relation amoureuse. Le plus souvent, il s’agit pour le Consultant de choisir 
+                        entre son partenaire de vie et une deuxième personne dont il ou elle est tombé(e) amoureux-euse.
+                    </p>
+                </div>
+                <div><img src="séparation.png" width="50%"></image></div> 
+                <div>
+                    <h3 class="display-3 mb-3">Le Travail</h3>
+                    <p><span class="alinea">Dans un Tirage concernant le travail, L’Amoureux indique que le Consultant a un choix important à faire et qu’il
+                        se sent tiraillé par les différentes possibilités. </span> 
+                        Quelle carrière choisir ? Faut-il quitter son emploi ? Lancer son activité ? Si “ne rien faire” ou “ne rien décider” semble être l’option 
+                        la plus confortable, le Consultant risque d’être de moins en moins satisfait de sa situation au fur et à mesure que le temps passe.
+
+Les Amoureux invitent le Consultant à peser le pour et le contre, à rechercher ce qui est le plus important à ses yeux – par exemple avoir un emploi moins bien 
+payé mais plus en ligne avec ses valeurs – et à prendre la décision qui sur le long terme lui apportera le plus de satisfaction.
+
+Il peut arriver que L’Amoureux évoque la bonne entente entre deux collègues, une alliance, sans forcément aller jusqu’à une relation amoureuse dans le cadre 
+professionnel.
+</p>
+                </div>
+                <div><img src="séparation.png" width="50%"></image></div> 
+                <div>
+                    <h3 class="display-3 mb-3">Les Finances</h3>
+                    <p><span class="alinea"> Les Amoureux indiquent que deux forces s’allient pour le plus grand bien des finances du Consultant. </span>
+                        Il peut s’agir de s’allier à un conseiller en patrimoine ou un notaire, pour bénéficier de leurs conseils avisés. Il peut s’agir 
+                        de mettre en commun des biens ou de faire un investissement avec un partenaire.
+
+                        Même s’il faut se montrer patient, le résultat devrait être positif voire surprenant.
+                    </p>
+                </div>
+                <div><img src="séparation.png" width="50%"></image></div> 
+                <div>
+                    <h3 class="display-3 mb-3">La Guidance</h3>
+                    <p><span class="alinea">Les Amoureux sont une Carte d’harmonie et d’amour. </span>Vous sentez-vous en harmonie avec vous même ? Etes-vous
+                         aligné(e) avec vos valeurs et votre Etre authentique ? Le fracas de la vie, les tracas du quotidien vous éloignent parfois de votre
+                          chemin spirituel, vous déséquilibrent et vous fatiguent.
+
+                        Si vous avez tiré la Carte des Amoureux, c’est le moment de vous demander ce que vous pouvez faire pour vous, pour restaurer ancrage
+                         et bien-être dans votre vie. De quoi avez-vous envie ? Qu’est-ce qui vous ferait le plus de bien ? Méditation, sophrologie, travail
+                          énergétique… toutes les voies sont bonnes si elles vous appellent ! Choisissez avec votre coeur.</p>
+                </div>
+                </section>
+    
     </div>
-    <div><img src="séparation.png" width="100%"></image></div>
+</div>
+</section>
+</div>
+<div><img src="séparation.png" width="100%"></image></div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <!--lien bootstrap js-->
